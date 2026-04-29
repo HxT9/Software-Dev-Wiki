@@ -1,0 +1,116 @@
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# Editor / IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.fleet/
+.cursor/
+
+# Obsidian (se in futuro lo userai sulla wiki)
+.obsidian/workspace*
+.obsidian/cache
+.trash/
+
+# Build / cache generici
+dist/
+build/
+out/
+*.log
+
+# Linguaggi nei Playground/
+
+## Node / TypeScript / JavaScript
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+.next/
+.nuxt/
+.svelte-kit/
+.turbo/
+coverage/
+.eslintcache
+
+## Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+.venv/
+venv/
+env/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+
+## Rust
+target/
+Cargo.lock
+
+## C/C++
+*.o
+*.obj
+*.a
+*.lib
+*.so.*
+*.dylib
+*.dll
+*.exe
+*.out
+*.app
+.vs/
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+
+## .NET / C#
+bin/
+obj/
+*.pdb
+*.user
+*.suo
+.vs/
+
+## Java
+*.class
+*.jar
+*.war
+*.ear
+target/
+.gradle/
+.mvn/
+hs_err_pid*
+
+## Go
+*.test
+vendor/
+
+# Static site generators (se in futuro userai uno di questi)
+.docusaurus/
+.cache/
+public/
+site/
+.vuepress/dist/
+.vitepress/cache/
+.vitepress/dist/
+_site/
+
+# Secrets / locale
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+secrets/

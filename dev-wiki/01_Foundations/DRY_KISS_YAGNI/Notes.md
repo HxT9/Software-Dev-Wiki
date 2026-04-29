@@ -1,0 +1,15 @@
+# Notes - DRY KISS YAGNI
+
+## Insights
+Cose che ho capito facendolo.
+-
+
+## Edge Cases
+-
+
+## Gotchas
+-
+
+## Open Questions
+-
+
