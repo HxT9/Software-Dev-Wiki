@@ -1,0 +1,43 @@
+/* Custom CSS overrides per Material for MkDocs */
+
+/* Frontmatter table-style block */
+.md-typeset .frontmatter {
+  display: block;
+  background: var(--md-code-bg-color);
+  padding: .8rem 1rem;
+  border-left: 4px solid var(--md-accent-fg-color);
+  border-radius: .2rem;
+  font-size: .85em;
+}
+
+/* Diagrammi Mermaid - centratura e ombra leggera */
+.md-typeset .mermaid {
+  text-align: center;
+  margin: 1.2em 0;
+}
+
+/* Checkbox task list piu visibili */
+.md-typeset .task-list-item input[type="checkbox"] {
+  transform: scale(1.1);
+  margin-right: .35em;
+}
+
+/* Codice inline piu morbido */
+.md-typeset code {
+  border-radius: .2rem;
+  padding: .1em .35em;
+}
+
+/* Heading anchors meno invasivi */
+.md-typeset .headerlink {
+  opacity: 0;
+  transition: opacity .2s;
+}
+.md-typeset h1:hover .headerlink,
+.md-typeset h2:hover .headerlink,
+.md-typeset h3:hover .headerlink,
+.md-typeset h4:hover .headerlink,
+.md-typeset h5:hover .headerlink,
+.md-typeset h6:hover .headerlink {
+  opacity: 1;
+}

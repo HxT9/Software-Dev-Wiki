@@ -97,15 +97,19 @@ hs_err_pid*
 *.test
 vendor/
 
-# Static site generators (se in futuro userai uno di questi)
+# Static site generators
 .docusaurus/
 .cache/
 public/
-site/
+site/                # MkDocs build output
 .vuepress/dist/
 .vitepress/cache/
 .vitepress/dist/
 _site/
+
+# MkDocs venv locale
+.venv-docs/
+venv-docs/
 
 # Secrets / locale
 .env
