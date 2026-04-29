@@ -169,6 +169,7 @@ write_if_missing "$ROOT/18_Snippets/README.md" "# 18 Snippets
 Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto.
 
 ## Sezioni
+
 - [C](./C/)
 - [Cpp](./Cpp/)
 - [CSharp](./CSharp/)
@@ -181,26 +182,15 @@ Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto
 - [Regex](./Regex/) — espressioni regolari riutilizzabili
 - [Git](./Git/) — alias, hook, comandi utili
 
-## Template snippet
+## Struttura di uno snippet
 
-\`\`\`markdown
-# <Snippet Name>
+Per ogni snippet crea un file \`.md\` con queste sezioni:
 
-## Description
-Breve descrizione.
-
-## Code
-
-    # snippet riutilizzabile
-    def helper():
-        return True
-
-## Usage
-Quando usarlo.
-
-## Notes
--
-\`\`\`
+- **Title** (heading H1) — nome dello snippet.
+- **Description** — breve descrizione (1-2 righe).
+- **Code** — blocco di codice nel linguaggio appropriato (usa fence con language tag, es. \` \`\`\`python \`).
+- **Usage** — quando usarlo, contesto, prerequisiti.
+- **Notes** — caveat, varianti, alternative correlate.
 "
 
 mkdir -p "$ROOT/18_Snippets/C"
