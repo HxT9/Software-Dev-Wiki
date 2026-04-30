@@ -4,3 +4,8 @@ mkdocs-section-index==0.3.9
 mkdocs-awesome-pages-plugin==2.9.3
 pymdown-extensions==10.11.2
 mkdocs-glightbox==0.4.0
+# Pin Pygments < 2.20: pymdownx.highlight 10.11.2 passes filename=None to
+# HtmlFormatter, which Pygments 2.20.0 no longer tolerates (calls .replace
+# on the value, crashes with "'NoneType' object has no attribute 'replace'").
+# 2.19.x is compatible. Re-evaluate when pymdownx releases a fix.
+Pygments<2.20

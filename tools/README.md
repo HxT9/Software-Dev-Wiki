@@ -75,6 +75,19 @@ Updates the `last_updated:` frontmatter field of one or more files to today's da
 python tools/wiki.py touch dev-wiki/01_Foundations/SOLID/README.md
 ```
 
+## Local MkDocs build
+
+Test the site locally before pushing — saves the round-trip through GitHub Actions.
+
+```bash
+bash tools/docs.sh install   # one-time: create .venv-docs and install deps
+bash tools/docs.sh build     # build static site to ./site
+bash tools/docs.sh serve     # live-reload dev server on http://localhost:8000
+bash tools/docs.sh clean     # remove site/ and the README→index.md copies
+```
+
+The script transparently mirrors `README.md` → `index.md` (the same step the GitHub Action does), then undoes it on cleanup so the source tree stays untouched.
+
 ## Git hooks
 
 ### `tools/install_hooks.sh`
