@@ -24,10 +24,10 @@ Topics in **bold** are written; the others are proposed.
 | Hard to write a unit test without mocking five things | **[Coupling_Cohesion](./Coupling_Cohesion.md)**, **[SOLID](./SOLID.md)** (DIP) |
 | Subclass inherits a method that crashes for that subtype | **[SOLID](./SOLID.md)** (LSP), **[Composition_over_Inheritance](./Composition_over_Inheritance.md)** |
 | Interface forces clients to depend on methods they don't use | **[SOLID](./SOLID.md)** (ISP) |
-| Class reaches deep into another's internals (`a.getB().getC().doX()`) | `Law_of_Demeter`, **[Encapsulation](./Encapsulation.md)** |
-| Bug surfaces far from its real cause | `Fail_Fast` |
-| API name says one thing, method does another | `Naming_Conventions`, `Principle_of_Least_Astonishment` |
-| Code's getting messier release after release | `Code_Smells` → `Refactoring_Techniques` |
+| Class reaches deep into another's internals (`a.getB().getC().doX()`) | **[Law_of_Demeter](./Law_of_Demeter.md)**, **[Encapsulation](./Encapsulation.md)** |
+| Bug surfaces far from its real cause | **[Fail_Fast](./Fail_Fast.md)** |
+| API name says one thing, method does another | **[Naming_Conventions](./Naming_Conventions.md)**, **[Principle_of_Least_Astonishment](./Principle_of_Least_Astonishment.md)** |
+| Code's getting messier release after release | **[Code_Smells](./Code_Smells.md)** → **[Refactoring_Techniques](./Refactoring_Techniques.md)** |
 | Module's internals leak into clients | **[Encapsulation](./Encapsulation.md)**, **[Coupling_Cohesion](./Coupling_Cohesion.md)** |
 
 ## Topics in this section
@@ -38,11 +38,11 @@ Topics in **bold** are written; the others are proposed.
 - ✅ [DRY_KISS_YAGNI](./DRY_KISS_YAGNI.md) — three rules that pull each other into balance: don't repeat, keep simple, don't anticipate.
 - ✅ [Coupling_Cohesion](./Coupling_Cohesion.md) — the most important pair of design metrics. Low coupling, high cohesion.
 - ✅ [Separation_of_Concerns](./Separation_of_Concerns.md) — different responsibilities live in different modules. Cuts complexity at the seams.
-- ⬜ Law_of_Demeter — only talk to your direct neighbors. Avoid train-wreck calls.
+- ✅ [Law_of_Demeter](./Law_of_Demeter.md) — only talk to your direct neighbors. Avoid train-wreck calls.
 - ✅ [Composition_over_Inheritance](./Composition_over_Inheritance.md) — favor "has-a" over "is-a". Inheritance binds you tightly to what you extend.
-- ⬜ Fail_Fast — surface errors at the first opportunity. Don't paper over invariants.
-- ⬜ Principle_of_Least_Astonishment — code should behave the way a reasonable reader expects.
+- ✅ [Fail_Fast](./Fail_Fast.md) — surface errors at the first opportunity. Don't paper over invariants.
+- ✅ [Principle_of_Least_Astonishment](./Principle_of_Least_Astonishment.md) — code should behave the way a reasonable reader expects.
 - ✅ [Encapsulation](./Encapsulation.md) — hide internals, expose behavior. The first line of defense against coupling.
-- ⬜ Code_Smells — early warning signs that something's off. Catalog of red flags.
-- ⬜ Refactoring_Techniques — how to clean up *safely*, in small reversible steps.
-- ⬜ Naming_Conventions — names are the most-read part of code. Get them right.
+- ✅ [Code_Smells](./Code_Smells.md) — early warning signs that something's off. Catalog of red flags.
+- ✅ [Refactoring_Techniques](./Refactoring_Techniques.md) — how to clean up *safely*, in small reversible steps.
+- ✅ [Naming_Conventions](./Naming_Conventions.md) — names are the most-read part of code. Get them right.
