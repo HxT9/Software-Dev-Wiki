@@ -56,9 +56,11 @@ public interface IRefundCapable
     Task<RefundResult> RefundAsync(string transactionId, decimal amount, CancellationToken ct);
 }
 
+public delegate Task<T> RetryableOp<T>(CancellationToken ct);
+
 public interface IRetryPolicy
 {
-    Task<T> ExecuteAsync<T>(Func<CancellationToken, Task<T>> op, CancellationToken ct);
+    Task<T> ExecuteAsync<T>(RetryableOp<T> op, CancellationToken ct);
 }
 
 // --- Concrete providers (OCP) ---
