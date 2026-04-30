@@ -87,6 +87,10 @@ markdown_extensions:
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.details
+  # pymdownx.smartsymbols intentionally NOT enabled — it has edge cases that
+  # break Pygments-highlighted code containing C#-style "=>" or generics, and
+  # the typographic conversions it offers (->, =>, --) aren't worth the risk
+  # for a wiki full of code samples.
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
@@ -94,7 +98,6 @@ markdown_extensions:
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.snippets
-  - pymdownx.smartsymbols
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
