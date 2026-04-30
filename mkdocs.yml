@@ -70,6 +70,7 @@ plugins:
       width: 100%
 
 markdown_extensions:
+  # Standard Markdown extensions — safe and broadly useful.
   - abbr
   - admonition
   - attr_list
@@ -80,34 +81,24 @@ markdown_extensions:
   - toc:
       permalink: true
       title: In questa pagina
-  - pymdownx.arithmatex:
-      generic: true
+  # pymdownx — minimal selection.
+  # Intentionally NOT enabled (each broke or risked breaking C#/code samples):
+  #   - pymdownx.smartsymbols   ("=>" → "⇒" tripped the Pygments csharp lexer)
+  #   - pymdownx.arithmatex     ("$..." in C# interpolated strings look like math)
+  #   - pymdownx.snippets       ("---" / "<-" patterns risk false-positive directives)
+  #   - pymdownx.tabbed, .keys, .caret, .mark, .tilde   (unused features → unnecessary risk)
   - pymdownx.betterem
-  - pymdownx.caret
-  - pymdownx.mark
-  - pymdownx.tilde
   - pymdownx.details
-  # pymdownx.smartsymbols intentionally NOT enabled — it has edge cases that
-  # break Pygments-highlighted code containing C#-style "=>" or generics, and
-  # the typographic conversions it offers (->, =>, --) aren't worth the risk
-  # for a wiki full of code samples.
   - pymdownx.highlight:
       anchor_linenums: true
       line_spans: __span
       pygments_lang_class: true
   - pymdownx.inlinehilite
-  - pymdownx.keys
-  - pymdownx.snippets
   - pymdownx.superfences:
       custom_fences:
         - name: mermaid
           class: mermaid
           format: !!python/name:pymdownx.superfences.fence_code_format
-  - pymdownx.tabbed:
-      alternate_style: true
-      slugify: !!python/object/apply:pymdownx.slugs.slugify
-        kwds:
-          case: lower
   - pymdownx.tasklist:
       custom_checkbox: true
       clickable_checkbox: false
