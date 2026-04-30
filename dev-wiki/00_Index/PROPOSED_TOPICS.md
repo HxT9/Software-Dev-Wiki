@@ -17,15 +17,15 @@ See [TOPIC_TEMPLATE.md](./TOPIC_TEMPLATE.md) for the canonical structure.
 
 ## 01 Foundations
 
-- ✅ [SOLID](../01_Foundations/SOLID/) — five OOP principles (SRP, OCP, LSP, ISP, DIP)
-- ⬜ DRY_KISS_YAGNI — three rules that pull each other into balance
-- ⬜ Coupling_Cohesion — the most important pair of design metrics
-- ⬜ Separation_of_Concerns — different responsibilities, different modules
+- ✅ [SOLID](../01_Foundations/SOLID.md) — five OOP principles (SRP, OCP, LSP, ISP, DIP)
+- ✅ [DRY_KISS_YAGNI](../01_Foundations/DRY_KISS_YAGNI.md) — three rules that pull each other into balance
+- ✅ [Coupling_Cohesion](../01_Foundations/Coupling_Cohesion.md) — the most important pair of design metrics
+- ✅ [Separation_of_Concerns](../01_Foundations/Separation_of_Concerns.md) — different responsibilities, different modules
 - ⬜ Law_of_Demeter — only talk to your direct neighbors
-- ⬜ Composition_over_Inheritance — favor "has-a" over "is-a"
+- ✅ [Composition_over_Inheritance](../01_Foundations/Composition_over_Inheritance.md) — favor "has-a" over "is-a"
 - ⬜ Fail_Fast — surface errors at the first opportunity
 - ⬜ Principle_of_Least_Astonishment — code should match a reader's expectations
-- ⬜ Encapsulation — hide internals, expose behavior
+- ✅ [Encapsulation](../01_Foundations/Encapsulation.md) — hide internals, expose behavior
 - ⬜ Code_Smells — early warning signs of bad design
 - ⬜ Refactoring_Techniques — how to clean up safely
 - ⬜ Naming_Conventions — names are the most-read part of code
@@ -453,7 +453,7 @@ See [TOPIC_TEMPLATE.md](./TOPIC_TEMPLATE.md) for the canonical structure.
 ## Progress
 
 - **Total proposed**: 337
-- **Written (✅)**: 1 (SOLID)
-- **Pending (⬜)**: 336
+- **Written (✅)**: 6 (SOLID, DRY_KISS_YAGNI, Coupling_Cohesion, Separation_of_Concerns, Composition_over_Inheritance, Encapsulation)
+- **Pending (⬜)**: 331
 
 To recompute live: `python tools/wiki.py status`.
