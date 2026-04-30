@@ -1,9 +1,9 @@
 # Books
 
-Lista di libri di riferimento, raggruppati per area.
+List of reference books, grouped by area.
 
 ## Foundations
-- _<Titolo>_ — <Autore>. Note: ...
+- _<Title>_ — <Author>. Notes: ...
 
 ## Architecture
 -

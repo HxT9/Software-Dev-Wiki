@@ -1,11 +1,11 @@
 # Conferences
 
-Conferenze rilevanti, in-person e online.
+Notable conferences, in-person and online.
 
 ## Format
-- [Nome](url) — frequenza/luogo. Tag: `#area`. Note: cosa la rende interessante.
+- [Name](url) — frequency/location. Tag: `#area`. Notes: why it's interesting.
 
-## Generaliste
+## General
 -
 
 ## Architecture & Backend

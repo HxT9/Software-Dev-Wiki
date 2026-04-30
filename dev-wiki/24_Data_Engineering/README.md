@@ -1,8 +1,8 @@
 # 24 Data Engineering
 
-Pipeline, batch vs streaming, data lake/warehouse/lakehouse.
+Pipelines, batch vs streaming, data lake/warehouse/lakehouse.
 
-## Topic in questa sezione
+## Topics in this section
 - [Apache_Spark_Basics](./Apache_Spark_Basics/)
 - [Batch_vs_Streaming](./Batch_vs_Streaming/)
 - [Data_Lake_Warehouse_Lakehouse](./Data_Lake_Warehouse_Lakehouse/)

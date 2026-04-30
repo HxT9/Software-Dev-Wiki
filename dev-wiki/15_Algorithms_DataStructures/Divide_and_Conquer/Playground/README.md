@@ -1,10 +1,10 @@
 # Playground - Divide and Conquer
 
-Mini progetti dimostrativi e codice eseguibile per Divide and Conquer.
+Runnable mini projects and example code for Divide and Conquer.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

@@ -2,7 +2,7 @@
 
 JVM internals, GC, concurrency, streams, reactive, build.
 
-## Topic in questa sezione
+## Topics in this section
 - [Build_Tools](./Build_Tools/)
 - [Concurrency](./Concurrency/)
 - [GC](./GC/)

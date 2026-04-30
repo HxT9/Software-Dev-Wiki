@@ -1,29 +1,29 @@
 # When to Use - Composition over Inheritance
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Composition over Inheritance?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Composition over Inheritance]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Composition over Inheritance?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Composition over Inheritance]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Composition over Inheritance è la scelta giusta.
+- Scenario 1: context, constraints, why Composition over Inheritance is the right call.
 -
 

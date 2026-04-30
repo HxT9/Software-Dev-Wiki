@@ -1,9 +1,9 @@
 # Newsletters
 
-Newsletter tecniche da seguire.
+Technical newsletters worth following.
 
 ## Format
-- [Nome](url) — autore. Frequenza: settimanale/mensile. Tag: `#area`.
+- [Name](url) — author. Frequency: weekly/monthly. Tag: `#area`.
 
 ## Backend & Architecture
 -

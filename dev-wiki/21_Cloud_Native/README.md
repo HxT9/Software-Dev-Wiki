@@ -2,7 +2,7 @@
 
 12-factor, sidecar, ambassador, multi-tenancy, FinOps.
 
-## Topic in questa sezione
+## Topics in this section
 - [Ambassador](./Ambassador/)
 - [Edge_Computing](./Edge_Computing/)
 - [FinOps](./FinOps/)

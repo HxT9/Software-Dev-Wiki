@@ -1,29 +1,29 @@
 # When to Use - Test Pyramid
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Test Pyramid?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Test Pyramid]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Test Pyramid?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Test Pyramid]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Test Pyramid è la scelta giusta.
+- Scenario 1: context, constraints, why Test Pyramid is the right call.
 -
 

@@ -1,10 +1,14 @@
 # 14 Languages
 
-Approfondimenti per linguaggio.
+Per-language deep dives.
 
-## Topic in questa sezione
+## Topics in this section
+- [C](./C/)
 - [CSharp](./CSharp/)
 - [Cpp](./Cpp/)
+- [Java](./Java/)
 - [Python](./Python/)
+- [Rust](./Rust/)
+- [TypeScript](./TypeScript/)
 
 ## Tags

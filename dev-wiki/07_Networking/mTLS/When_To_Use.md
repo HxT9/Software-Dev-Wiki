@@ -1,29 +1,29 @@
 # When to Use - mTLS
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando mTLS?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera mTLS]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering mTLS?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider mTLS]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè mTLS è la scelta giusta.
+- Scenario 1: context, constraints, why mTLS is the right call.
 -
 

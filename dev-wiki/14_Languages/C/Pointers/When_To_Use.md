@@ -1,29 +1,29 @@
 # When to Use - Pointers
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Pointers?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Pointers]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Pointers?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Pointers]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Pointers è la scelta giusta.
+- Scenario 1: context, constraints, why Pointers is the right call.
 -
 

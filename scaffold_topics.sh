@@ -1,18 +1,18 @@
 #!/usr/bin/env bash
-# Scaffolda i file standard per ogni topic della wiki.
-# Idempotente di default. Imposta FORCE=1 per sovrascrivere placeholder esistenti.
+# Scaffold the standard files for each wiki topic.
+# Idempotent by default. Set FORCE=1 to overwrite existing placeholders.
 #
-# Template: 9 file per topic (README + 7 sezioni + Playground/).
-# - README.md            : hub con frontmatter YAML + overview/problem/key concepts/prerequisites + link
-# - When_To_Use.md       : casi d'uso, indicatori, scenari, decision tree
-# - Tradeoffs.md         : pro/contro, performance characteristics (flessibili), alternative
-# - Example_Simple.md    : esempio minimale
-# - Example_Real.md      : esempio production-like
+# Template: 9 files per topic (README + 7 sections + Playground/).
+# - README.md            : hub with YAML frontmatter + overview/problem/key concepts/prerequisites + links
+# - When_To_Use.md       : use cases, indicators, scenarios, decision tree
+# - Tradeoffs.md         : pros/cons, flexible performance characteristics, alternatives
+# - Example_Simple.md    : minimal example
+# - Example_Real.md      : production-like example
 # - Diagrams.md          : Mermaid/PlantUML/C4
-# - Checklist.md         : implementazione, code review, production readiness
-# - Topic_AntiPatterns.md: antipattern *specifici di questo topic* (i generici stanno in 16_AntiPatterns/)
-# - Notes.md             : insights, edge cases, gotchas, questions
-# - Playground/          : mini progetti eseguibili
+# - Checklist.md         : implementation, code review, production readiness
+# - Topic_AntiPatterns.md: anti-patterns *specific to this topic* (generic ones live in 16_AntiPatterns/)
+# - Notes.md             : insights, edge cases, gotchas, open questions
+# - Playground/          : runnable mini projects
 
 set -euo pipefail
 
@@ -29,13 +29,13 @@ write_file() {
   printf '%s\n' "$*" > "$path"
 }
 
-# Deriva la sezione di primo livello (es: "01_Foundations") dal path relativo.
+# Derive the top-level section (e.g., "01_Foundations") from the relative path.
 derive_section() {
   local rel="$1"
   echo "$rel" | cut -d'/' -f1
 }
 
-# Deriva i tag automatici dal path (es: 14_Languages/Rust/Async => [languages, rust])
+# Auto-derive tags from the path (e.g., 14_Languages/Rust/Async => [languages, rust]).
 derive_tags() {
   local rel="$1"
   local section
@@ -63,7 +63,7 @@ scaffold_topic() {
 
   mkdir -p "$dir"
 
-  # Migrazione: rimuove vecchio AntiPatterns.md (rinominato in Topic_AntiPatterns.md)
+  # Migration: remove old AntiPatterns.md (renamed to Topic_AntiPatterns.md).
   if [[ "$FORCE" == "1" && -e "$dir/AntiPatterns.md" ]]; then
     rm -f "$dir/AntiPatterns.md"
   fi
@@ -83,30 +83,30 @@ reading_time_min: 10
 # ${title}
 
 ## Overview
-Una/due frasi che spiegano cos'è questo topic e perché esiste.
+One or two sentences explaining what this topic is and why it exists.
 
 ## Problem
-Quale problema concreto risolve?
+What concrete problem does it solve?
 -
 
 ## Key Concepts
-Concetti chiave (definirli brevemente, linkare a glossario o ad altri topic se serve).
+Key concepts (define each briefly; link to a glossary or to other topics when useful).
 -
 
 ## Prerequisites
-Cosa è utile sapere prima di leggere questo topic.
+What's helpful to know before reading this topic.
 - [[OtherTopic]]
 
-## Approfondimenti
-- [When to Use](./When_To_Use.md) — casi d'uso, indicatori, decision tree
-- [Trade-offs](./Tradeoffs.md) — pro, contro, performance, alternative
-- [Simple Example](./Example_Simple.md) — esempio minimale
-- [Real World Example](./Example_Real.md) — esempio production-like
-- [Diagrams](./Diagrams.md) — diagrammi Mermaid/PlantUML/C4
-- [Checklist](./Checklist.md) — implementazione, review, production readiness
-- [Topic Anti-Patterns](./Topic_AntiPatterns.md) — anti-pattern *specifici di questo topic*
-- [Notes](./Notes.md) — insights, edge case, gotchas
-- [Playground](./Playground/) — codice eseguibile
+## Deep Dives
+- [When to Use](./When_To_Use.md) — use cases, indicators, decision tree
+- [Trade-offs](./Tradeoffs.md) — pros, cons, performance, alternatives
+- [Simple Example](./Example_Simple.md) — minimal example
+- [Real World Example](./Example_Real.md) — production-like example
+- [Diagrams](./Diagrams.md) — Mermaid / PlantUML / C4 diagrams
+- [Checklist](./Checklist.md) — implementation, review, production readiness
+- [Topic Anti-Patterns](./Topic_AntiPatterns.md) — anti-patterns *specific to this topic*
+- [Notes](./Notes.md) — insights, edge cases, gotchas
+- [Playground](./Playground/) — runnable code
 
 ## Related Topics
 - [[OtherTopic]]
@@ -118,30 +118,30 @@ Cosa è utile sapere prima di leggere questo topic.
   write_file "$dir/When_To_Use.md" "# When to Use - ${title}
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 \`\`\`mermaid
 flowchart TD
-  Q[Sto valutando ${title}?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera ${title}]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering ${title}?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider ${title}]
+  Q1 -->|No| NO[Probably not needed]
 \`\`\`
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè ${title} è la scelta giusta.
+- Scenario 1: context, constraints, why ${title} is the right call.
 -
 "
 
@@ -156,7 +156,7 @@ flowchart TD
 -
 
 ## Performance Characteristics
-> Riempi solo i campi rilevanti per il topic. Rimuovi quelli che non si applicano.
+> Fill in only the fields relevant to this topic. Remove the ones that don't apply.
 - **Throughput**:
 - **Latency**:
 - **Memory footprint**:
@@ -177,22 +177,22 @@ flowchart TD
 - On-call burden:
 
 ## Alternatives
-- [[Alternative1]] — quando preferirla
-- [[Alternative2]] — quando preferirla
+- [[Alternative1]] — when to prefer it
+- [[Alternative2]] — when to prefer it
 "
 
   write_file "$dir/Example_Simple.md" "# Simple Example - ${title}
 
 ## Goal
-Obiettivo dell'esempio in una riga.
+One-line statement of the example's goal.
 
 ## Explanation
-Spiegazione passo-passo.
+Step-by-step explanation.
 
 ## Code
 
 \`\`\`
-# Codice minimale, isolato, eseguibile
+# Minimal, isolated, runnable code
 \`\`\`
 
 ## Key Takeaways
@@ -203,29 +203,29 @@ Spiegazione passo-passo.
   write_file "$dir/Example_Real.md" "# Real World Example - ${title}
 
 ## Context
-Scenario realistico (dominio, vincoli, scala).
+Realistic scenario (domain, constraints, scale).
 
 ## Requirements
 -
 -
 
 ## Architecture
-Breve overview dei componenti coinvolti. Vedi [Diagrams](./Diagrams.md) per il diagramma.
+Brief overview of the components involved. See [Diagrams](./Diagrams.md) for the diagram.
 
 ## Flow
-Sequenza di passaggi del flusso principale.
+Sequence of steps in the main flow.
 
 ## Code
 
 \`\`\`
-# Codice piu vicino alla produzione (error handling, observability, ecc.)
+# Production-leaning code (error handling, observability, etc.)
 \`\`\`
 
 ## Notes
 -
 
 ## Improvements
-- Cosa aggiungeresti per portarlo davvero in produzione.
+- What you would add to push this all the way to production.
 "
 
   write_file "$dir/Diagrams.md" "# Diagrams - ${title}
@@ -233,8 +233,8 @@ Sequenza di passaggi del flusso principale.
 ## Concept Map
 \`\`\`mermaid
 graph LR
-  A[Concetto 1] --> B[Concetto 2]
-  A --> C[Concetto 3]
+  A[Concept 1] --> B[Concept 2]
+  A --> C[Concept 3]
 \`\`\`
 
 ## Sequence
@@ -246,8 +246,8 @@ sequenceDiagram
   B-->>A: Response
 \`\`\`
 
-## Architecture (C4 / blocchi)
-> Inserisci diagramma C4 (Context/Container/Component) o blocchi architetturali se rilevante.
+## Architecture (C4 / blocks)
+> Add a C4 diagram (Context/Container/Component) or architectural blocks if relevant.
 
 \`\`\`mermaid
 flowchart LR
@@ -255,74 +255,74 @@ flowchart LR
   Service --> DB[(Database)]
 \`\`\`
 
-## Note grafiche
+## Visual Notes
 -
 "
 
   write_file "$dir/Checklist.md" "# Checklist - ${title}
 
 ## Implementation Checklist
-Step concreti per implementare correttamente ${title}.
+Concrete steps to implement ${title} correctly.
 - [ ] Step 1
 - [ ] Step 2
 - [ ] Step 3
 
 ## Review Checklist
-Cosa controllare in code review quando vedi codice che usa ${title}.
+What to look for during code review when this topic is involved.
 - [ ] Item 1
 - [ ] Item 2
 
 ## Production Readiness
-- [ ] Logging strutturato (chi, cosa, perchè)
-- [ ] Metriche / SLI definiti
-- [ ] Alerting su failure mode noti
-- [ ] Test (unit, integration, e2e dove applicabile)
-- [ ] Failure modes documentati
+- [ ] Structured logging (who, what, why)
+- [ ] Metrics / SLIs defined
+- [ ] Alerting on known failure modes
+- [ ] Tests (unit, integration, e2e where applicable)
+- [ ] Failure modes documented
 - [ ] Rollback plan
-- [ ] Performance baseline misurato
-- [ ] Security review (se applicabile)
+- [ ] Performance baseline measured
+- [ ] Security review (if applicable)
 "
 
   write_file "$dir/Topic_AntiPatterns.md" "# Topic Anti-Patterns - ${title}
 
-> Anti-pattern *specifici di ${title}*.
-> Per anti-pattern generici (God Object, Spaghetti, ecc.) vedi [16_AntiPatterns](../../16_AntiPatterns/).
-> Se il path non corrisponde (es: pattern annidati piu profondamente) aggiusta il link relativo.
+> Anti-patterns *specific to ${title}*.
+> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
+> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
 
-## <Nome AntiPattern>
+## <Anti-Pattern Name>
 
 **Description**
-Cosa fa la gente che non dovrebbe.
+What people do that they shouldn't.
 
 **Why it's bad**
 -
 
-**Example (sbagliato)**
+**Bad Example**
 
 \`\`\`
-# codice sbagliato
+# bad code
 \`\`\`
 
 **Better Approach**
 -
 
-**Example (corretto)**
+**Good Example**
 
 \`\`\`
-# codice corretto
+# good code
 \`\`\`
 
 ---
 
-## Smells correlati
-Smell che spesso preludono a un uso scorretto di ${title}.
+## Related Smells
+Smells that often precede a misuse of ${title}.
 -
 "
 
   write_file "$dir/Notes.md" "# Notes - ${title}
 
 ## Insights
-Cose che ho capito facendolo.
+Things learned in the field.
 -
 
 ## Edge Cases
@@ -338,17 +338,17 @@ Cose che ho capito facendolo.
   mkdir -p "$dir/Playground"
   write_file "$dir/Playground/README.md" "# Playground - ${title}
 
-Mini progetti dimostrativi e codice eseguibile per ${title}.
+Runnable mini projects and example code for ${title}.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 "
 }
 
-# Lista di tutti i topic foglia che devono ricevere il template standard.
+# List of every leaf topic that should receive the standard template.
 TOPICS=(
   # 01_Foundations
   "01_Foundations/SOLID"

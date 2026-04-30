@@ -1,29 +1,29 @@
 # When to Use - Adapter
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Adapter?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Adapter]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Adapter?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Adapter]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Adapter è la scelta giusta.
+- Scenario 1: context, constraints, why Adapter is the right call.
 -
 

@@ -1,4 +1,4 @@
 # Snippets - Git
 
-Snippet riutilizzabili in Git.
-Aggiungi un file `.md` per ogni snippet seguendo il template in [../](../).
+Reusable snippets in Git.
+Add a `.md` file for each snippet following the template described in [../](../).

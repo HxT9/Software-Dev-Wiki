@@ -1,29 +1,29 @@
 # When to Use - Strategy
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Strategy?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Strategy]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Strategy?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Strategy]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Strategy è la scelta giusta.
+- Scenario 1: context, constraints, why Strategy is the right call.
 -
 

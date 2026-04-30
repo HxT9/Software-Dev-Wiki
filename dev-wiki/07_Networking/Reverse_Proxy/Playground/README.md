@@ -1,10 +1,10 @@
 # Playground - Reverse Proxy
 
-Mini progetti dimostrativi e codice eseguibile per Reverse Proxy.
+Runnable mini projects and example code for Reverse Proxy.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

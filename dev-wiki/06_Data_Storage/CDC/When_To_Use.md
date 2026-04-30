@@ -1,29 +1,29 @@
 # When to Use - CDC
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando CDC?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera CDC]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering CDC?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider CDC]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè CDC è la scelta giusta.
+- Scenario 1: context, constraints, why CDC is the right call.
 -
 

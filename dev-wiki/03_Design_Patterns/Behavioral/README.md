@@ -1,10 +1,19 @@
 # Behavioral Patterns
 
-Pattern per la comunicazione e la responsabilità tra oggetti.
+Patterns for communication and responsibility between objects.
 
-## Topic in questa sezione
+## Topics in this section
+- [Chain_of_Responsibility](./Chain_of_Responsibility/)
 - [Command](./Command/)
+- [Iterator](./Iterator/)
+- [Mediator](./Mediator/)
+- [Memento](./Memento/)
+- [Null_Object](./Null_Object/)
 - [Observer](./Observer/)
+- [Specification](./Specification/)
+- [State](./State/)
 - [Strategy](./Strategy/)
+- [Template_Method](./Template_Method/)
+- [Visitor](./Visitor/)
 
 ## Tags

@@ -1,29 +1,29 @@
 # When to Use - OWASP
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando OWASP?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera OWASP]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering OWASP?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider OWASP]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè OWASP è la scelta giusta.
+- Scenario 1: context, constraints, why OWASP is the right call.
 -
 

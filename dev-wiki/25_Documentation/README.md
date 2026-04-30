@@ -1,8 +1,8 @@
 # 25 Documentation & Communication
 
-Documentation as code, C4, diagrammi, code review, pairing.
+Documentation as code, C4, diagrams, code review, pairing.
 
-## Topic in questa sezione
+## Topics in this section
 - [C4_Model](./C4_Model/)
 - [Code_Review](./Code_Review/)
 - [Documentation_as_Code](./Documentation_as_Code/)

@@ -1,10 +1,10 @@
 # Playground - Practical Use Cases
 
-Mini progetti dimostrativi e codice eseguibile per Practical Use Cases.
+Runnable mini projects and example code for Practical Use Cases.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

@@ -1,10 +1,10 @@
 # Playground - Anemic Domain Model
 
-Mini progetti dimostrativi e codice eseguibile per Anemic Domain Model.
+Runnable mini projects and example code for Anemic Domain Model.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

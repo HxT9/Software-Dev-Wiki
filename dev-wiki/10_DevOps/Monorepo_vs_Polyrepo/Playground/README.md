@@ -1,10 +1,10 @@
 # Playground - Monorepo vs Polyrepo
 
-Mini progetti dimostrativi e codice eseguibile per Monorepo vs Polyrepo.
+Runnable mini projects and example code for Monorepo vs Polyrepo.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

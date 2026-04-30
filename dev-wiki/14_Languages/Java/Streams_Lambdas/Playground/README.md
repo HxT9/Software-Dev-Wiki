@@ -1,10 +1,10 @@
 # Playground - Streams Lambdas
 
-Mini progetti dimostrativi e codice eseguibile per Streams Lambdas.
+Runnable mini projects and example code for Streams Lambdas.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

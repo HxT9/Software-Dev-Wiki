@@ -1,8 +1,8 @@
 # 20 Domain-Driven Design
 
-Pattern strategici e tattici per modellare il dominio.
+Strategic and tactical patterns for domain modeling.
 
-## Topic in questa sezione
+## Topics in this section
 - [Aggregates](./Aggregates/)
 - [Anti_Corruption_Layer](./Anti_Corruption_Layer/)
 - [Bounded_Context](./Bounded_Context/)

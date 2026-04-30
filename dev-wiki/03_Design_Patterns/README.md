@@ -1,9 +1,11 @@
 # 03 Design Patterns
 
-Pattern classici (GoF) e moderni, raggruppati per categoria.
+Classic (GoF) and modern patterns, grouped by category.
 
-## Topic in questa sezione
+## Topics in this section
+- [Architectural](./Architectural/)
 - [Behavioral](./Behavioral/)
+- [Concurrency](./Concurrency/)
 - [Creational](./Creational/)
 - [Structural](./Structural/)
 

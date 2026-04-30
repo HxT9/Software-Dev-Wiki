@@ -1,8 +1,8 @@
 # Concurrency Patterns
 
-Pattern per coordinare lavoro tra thread/processi.
+Patterns for coordinating work across threads/processes.
 
-## Topic in questa sezione
+## Topics in this section
 - [Active_Object](./Active_Object/)
 - [Monitor](./Monitor/)
 - [Producer_Consumer](./Producer_Consumer/)

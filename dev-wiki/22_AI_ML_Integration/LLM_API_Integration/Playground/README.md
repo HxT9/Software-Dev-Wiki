@@ -1,10 +1,10 @@
 # Playground - LLM API Integration
 
-Mini progetti dimostrativi e codice eseguibile per LLM API Integration.
+Runnable mini projects and example code for LLM API Integration.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

@@ -2,7 +2,7 @@
 
 GIL, asyncio, type hints, dataclasses, packaging.
 
-## Topic in questa sezione
+## Topics in this section
 - [Asyncio](./Asyncio/)
 - [Dataclasses](./Dataclasses/)
 - [GIL](./GIL/)

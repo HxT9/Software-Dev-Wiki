@@ -1,10 +1,10 @@
 # Playground - SLI SLO SLA
 
-Mini progetti dimostrativi e codice eseguibile per SLI SLO SLA.
+Runnable mini projects and example code for SLI SLO SLA.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

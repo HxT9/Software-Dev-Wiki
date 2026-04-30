@@ -1,6 +1,6 @@
 # Case Studies
 
-Aggiungi un file per ogni case study seguendo il template.
+Add a file for each case study following the template.
 
 ## Template
-Vedi [Case_Study_Template.md](./Case_Study_Template.md).
+See [Case_Study_Template.md](./Case_Study_Template.md).

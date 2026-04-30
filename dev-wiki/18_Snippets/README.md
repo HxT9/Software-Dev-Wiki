@@ -1,8 +1,8 @@
 # 18 Snippets
 
-Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto.
+Reusable copy-paste snippets, organized by language/context.
 
-## Sezioni
+## Sections
 
 - [C](./C/)
 - [Cpp](./Cpp/)
@@ -13,15 +13,15 @@ Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto
 - [Bash](./Bash/)
 - [PowerShell](./PowerShell/)
 - [YAML](./YAML/) — Dockerfile, k8s, CI configs
-- [Regex](./Regex/) — espressioni regolari riutilizzabili
-- [Git](./Git/) — alias, hook, comandi utili
+- [Regex](./Regex/) — reusable regular expressions
+- [Git](./Git/) — aliases, hooks, useful commands
 
-## Struttura di uno snippet
+## Snippet structure
 
-Per ogni snippet crea un file `.md` con queste sezioni:
+For each snippet create a `.md` file with these sections:
 
-- **Title** (heading H1) — nome dello snippet.
-- **Description** — breve descrizione (1-2 righe).
-- **Code** — blocco di codice nel linguaggio appropriato (usa fence con language tag, es. ` ```python `).
-- **Usage** — quando usarlo, contesto, prerequisiti.
-- **Notes** — caveat, varianti, alternative correlate.
+- **Title** (H1 heading) — name of the snippet.
+- **Description** — brief description (1-2 lines).
+- **Code** — code block in the appropriate language (use a fence with a language tag, e.g. ` ```python `).
+- **Usage** — when to use it, context, prerequisites.
+- **Notes** — caveats, variants, related alternatives.

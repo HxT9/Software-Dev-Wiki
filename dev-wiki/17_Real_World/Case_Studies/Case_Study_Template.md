@@ -1,7 +1,7 @@
 # <Case Study Name>
 
 ## Context
-Situazione reale.
+The real-world situation.
 
 ## Problem
 -

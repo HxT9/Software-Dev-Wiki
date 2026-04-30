@@ -1,27 +1,27 @@
 # Real World Example - Monolith
 
 ## Context
-Scenario realistico (dominio, vincoli, scala).
+Realistic scenario (domain, constraints, scale).
 
 ## Requirements
 -
 -
 
 ## Architecture
-Breve overview dei componenti coinvolti. Vedi [Diagrams](./Diagrams.md) per il diagramma.
+Brief overview of the components involved. See [Diagrams](./Diagrams.md) for the diagram.
 
 ## Flow
-Sequenza di passaggi del flusso principale.
+Sequence of steps in the main flow.
 
 ## Code
 
 ```
-# Codice piu vicino alla produzione (error handling, observability, ecc.)
+# Production-leaning code (error handling, observability, etc.)
 ```
 
 ## Notes
 -
 
 ## Improvements
-- Cosa aggiungeresti per portarlo davvero in produzione.
+- What you would add to push this all the way to production.
 

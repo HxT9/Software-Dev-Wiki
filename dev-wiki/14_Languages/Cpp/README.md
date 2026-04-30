@@ -1,9 +1,13 @@
 # C++
 
-Memory management e concorrenza in C++.
+RAII, templates, move semantics, STL, concurrency.
 
-## Topic in questa sezione
+## Topics in this section
 - [Concurrency](./Concurrency/)
 - [Memory_Management](./Memory_Management/)
+- [Move_Semantics](./Move_Semantics/)
+- [RAII](./RAII/)
+- [STL](./STL/)
+- [Templates](./Templates/)
 
 ## Tags

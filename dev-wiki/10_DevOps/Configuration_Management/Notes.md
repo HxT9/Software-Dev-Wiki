@@ -1,7 +1,7 @@
 # Notes - Configuration Management
 
 ## Insights
-Cose che ho capito facendolo.
+Things learned in the field.
 -
 
 ## Edge Cases

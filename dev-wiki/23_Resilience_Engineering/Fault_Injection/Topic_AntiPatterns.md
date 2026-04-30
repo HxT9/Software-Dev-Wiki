@@ -1,35 +1,35 @@
 # Topic Anti-Patterns - Fault Injection
 
-> Anti-pattern *specifici di Fault Injection*.
-> Per anti-pattern generici (God Object, Spaghetti, ecc.) vedi [16_AntiPatterns](../../16_AntiPatterns/).
-> Se il path non corrisponde (es: pattern annidati piu profondamente) aggiusta il link relativo.
+> Anti-patterns *specific to Fault Injection*.
+> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
+> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
 
-## <Nome AntiPattern>
+## <Anti-Pattern Name>
 
 **Description**
-Cosa fa la gente che non dovrebbe.
+What people do that they shouldn't.
 
 **Why it's bad**
 -
 
-**Example (sbagliato)**
+**Bad Example**
 
 ```
-# codice sbagliato
+# bad code
 ```
 
 **Better Approach**
 -
 
-**Example (corretto)**
+**Good Example**
 
 ```
-# codice corretto
+# good code
 ```
 
 ---
 
-## Smells correlati
-Smell che spesso preludono a un uso scorretto di Fault Injection.
+## Related Smells
+Smells that often precede a misuse of Fault Injection.
 -
 

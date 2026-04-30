@@ -1,10 +1,10 @@
 # Playground - Big Ball of Mud
 
-Mini progetti dimostrativi e codice eseguibile per Big Ball of Mud.
+Runnable mini projects and example code for Big Ball of Mud.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

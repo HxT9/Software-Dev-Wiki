@@ -1,6 +1,6 @@
 # Postmortems
 
-Analisi di incidenti: timeline, root cause, impact, fix, action items.
+Incident analysis: timeline, root cause, impact, fix, action items.
 
 ## Template
 
@@ -11,22 +11,22 @@ Analisi di incidenti: timeline, root cause, impact, fix, action items.
 YYYY-MM-DD
 
 ## Summary
-Cosa è successo in 2-3 righe.
+What happened, in 2-3 lines.
 
 ## Timeline
-- HH:MM — evento
-- HH:MM — evento
+- HH:MM — event
+- HH:MM — event
 
 ## Root Cause
 -
 
 ## Impact
-- Utenti coinvolti:
-- Durata:
-- Servizi degradati:
+- Users affected:
+- Duration:
+- Degraded services:
 
 ## Resolution
-Cosa è stato fatto per risolvere.
+What was done to resolve it.
 
 ## Lessons Learned
 -

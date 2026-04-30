@@ -3,8 +3,8 @@
 ## Concept Map
 ```mermaid
 graph LR
-  A[Concetto 1] --> B[Concetto 2]
-  A --> C[Concetto 3]
+  A[Concept 1] --> B[Concept 2]
+  A --> C[Concept 3]
 ```
 
 ## Sequence
@@ -16,8 +16,8 @@ sequenceDiagram
   B-->>A: Response
 ```
 
-## Architecture (C4 / blocchi)
-> Inserisci diagramma C4 (Context/Container/Component) o blocchi architetturali se rilevante.
+## Architecture (C4 / blocks)
+> Add a C4 diagram (Context/Container/Component) or architectural blocks if relevant.
 
 ```mermaid
 flowchart LR
@@ -25,6 +25,6 @@ flowchart LR
   Service --> DB[(Database)]
 ```
 
-## Note grafiche
+## Visual Notes
 -
 

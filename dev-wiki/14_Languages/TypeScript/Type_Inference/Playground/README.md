@@ -1,10 +1,10 @@
 # Playground - Type Inference
 
-Mini progetti dimostrativi e codice eseguibile per Type Inference.
+Runnable mini projects and example code for Type Inference.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

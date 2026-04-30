@@ -1,6 +1,6 @@
 # Tools
 
-Tool utili raggruppati per area.
+Useful tools grouped by area.
 
 ## Profiling
 -
@@ -11,7 +11,7 @@ Tool utili raggruppati per area.
 ## CI/CD
 -
 
-## Containerizzazione
+## Containerization
 -
 
 ## Database

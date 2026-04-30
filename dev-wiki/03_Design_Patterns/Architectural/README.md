@@ -1,8 +1,8 @@
 # Architectural Patterns
 
-Pattern di organizzazione applicativa (MVC, MVVM, Repository, ecc.).
+Application organization patterns (MVC, MVVM, Repository, etc.).
 
-## Topic in questa sezione
+## Topics in this section
 - [MVC](./MVC/)
 - [MVP](./MVP/)
 - [MVVM](./MVVM/)

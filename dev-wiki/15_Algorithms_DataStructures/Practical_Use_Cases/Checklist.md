@@ -1,23 +1,23 @@
 # Checklist - Practical Use Cases
 
 ## Implementation Checklist
-Step concreti per implementare correttamente Practical Use Cases.
+Concrete steps to implement Practical Use Cases correctly.
 - [ ] Step 1
 - [ ] Step 2
 - [ ] Step 3
 
 ## Review Checklist
-Cosa controllare in code review quando vedi codice che usa Practical Use Cases.
+What to look for during code review when this topic is involved.
 - [ ] Item 1
 - [ ] Item 2
 
 ## Production Readiness
-- [ ] Logging strutturato (chi, cosa, perchè)
-- [ ] Metriche / SLI definiti
-- [ ] Alerting su failure mode noti
-- [ ] Test (unit, integration, e2e dove applicabile)
-- [ ] Failure modes documentati
+- [ ] Structured logging (who, what, why)
+- [ ] Metrics / SLIs defined
+- [ ] Alerting on known failure modes
+- [ ] Tests (unit, integration, e2e where applicable)
+- [ ] Failure modes documented
 - [ ] Rollback plan
-- [ ] Performance baseline misurato
-- [ ] Security review (se applicabile)
+- [ ] Performance baseline measured
+- [ ] Security review (if applicable)
 

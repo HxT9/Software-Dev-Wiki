@@ -2,7 +2,7 @@
 
 Chaos, fault injection, backpressure, bulkhead, graceful degradation.
 
-## Topic in questa sezione
+## Topics in this section
 - [Backpressure](./Backpressure/)
 - [Bulkhead](./Bulkhead/)
 - [Chaos_Engineering](./Chaos_Engineering/)

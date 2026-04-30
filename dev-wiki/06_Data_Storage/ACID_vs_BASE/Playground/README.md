@@ -1,10 +1,10 @@
 # Playground - ACID vs BASE
 
-Mini progetti dimostrativi e codice eseguibile per ACID vs BASE.
+Runnable mini projects and example code for ACID vs BASE.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

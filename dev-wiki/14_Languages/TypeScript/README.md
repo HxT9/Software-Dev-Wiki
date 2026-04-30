@@ -2,7 +2,7 @@
 
 Type system, generics, decorators, modules, compilation.
 
-## Topic in questa sezione
+## Topics in this section
 - [Compilation](./Compilation/)
 - [Decorators](./Decorators/)
 - [Generics](./Generics/)

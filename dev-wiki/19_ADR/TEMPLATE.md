@@ -7,10 +7,10 @@ Proposed / Accepted / Rejected / Superseded by ADR-XXXX
 YYYY-MM-DD
 
 ## Context
-Descrizione del problema, vincoli, forze in gioco.
+Description of the problem, constraints, forces at play.
 
 ## Decision
-Decisione presa.
+The decision taken.
 
 ## Consequences
 
@@ -24,8 +24,8 @@ Decisione presa.
 -
 
 ## Alternatives considered
-- **Alternativa A**: motivo per cui scartata.
-- **Alternativa B**: motivo per cui scartata.
+- **Alternative A**: reason it was rejected.
+- **Alternative B**: reason it was rejected.
 
 ## Notes
 -

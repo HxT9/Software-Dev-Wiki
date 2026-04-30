@@ -1,9 +1,9 @@
 # Communities
 
-Community di sviluppatori (Discord, Slack, Reddit, forum).
+Developer communities (Discord, Slack, Reddit, forums).
 
 ## Format
-- [Nome](url) — piattaforma. Tag: `#area`. Note: come entrare, cosa aspettarsi.
+- [Name](url) — platform. Tag: `#area`. Notes: how to join, what to expect.
 
 ## Reddit
 -
@@ -11,7 +11,7 @@ Community di sviluppatori (Discord, Slack, Reddit, forum).
 ## Discord / Slack
 -
 
-## Forum
+## Forums
 -
 
 ## Stack Exchange

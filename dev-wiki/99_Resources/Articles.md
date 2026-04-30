@@ -1,6 +1,6 @@
 # Articles
 
-Articoli, blog post, paper di rilievo.
+Articles, blog posts, and notable papers.
 
 ## Format
-- [Titolo](url) — autore/sito. Tag: `#area`. Note: 1-2 righe.
+- [Title](url) — author/site. Tag: `#area`. Notes: 1-2 lines.

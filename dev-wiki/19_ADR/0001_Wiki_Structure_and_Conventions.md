@@ -8,22 +8,22 @@ Accepted
 
 ## Context
 
-Serve una wiki centralizzata di software development per programmatori intermedio/avanzato che raccolga in un unico posto:
-- spiegazioni teoriche chiare e mirate,
-- esempi pratici (semplici + production-like),
-- trade-off, anti-pattern, decisioni architetturali documentate,
-- snippet riutilizzabili e mini progetti dimostrativi.
+A centralized software development wiki is needed for intermediate/advanced programmers, gathering in one place:
+- clear, focused theoretical explanations,
+- practical examples (simple + production-like),
+- documented trade-offs, anti-patterns, architectural decisions,
+- reusable snippets and runnable mini projects.
 
-Vincoli e forze in gioco:
-- **Scalabilità**: la wiki deve crescere a centinaia di topic senza diventare caos.
-- **Coerenza**: ogni topic deve avere una struttura prevedibile per facilitare lettura e ricerca.
-- **Manutenibilità**: il template deve evitare duplicazione di contenuti.
-- **Automazione futura**: navigazione per tag, filtri per stato di scrittura, roadmap dinamica devono essere possibili senza riscrivere tutto.
-- **Onboarding**: chi entra deve capire dove mettere cosa in 5 minuti.
+Constraints and forces at play:
+- **Scalability**: the wiki must grow to hundreds of topics without becoming chaotic.
+- **Consistency**: each topic must follow a predictable structure to make reading and search easier.
+- **Maintainability**: the template must avoid content duplication.
+- **Future automation**: tag-based navigation, filters by writing status, dynamic roadmap must all be possible without rewriting everything.
+- **Onboarding**: a newcomer should understand where everything goes within 5 minutes.
 
 ## Decision
 
-### Struttura top-level (28 sezioni)
+### Top-level structure (28 sections)
 
 ```
 dev-wiki/
@@ -43,10 +43,10 @@ dev-wiki/
 ├── 13_Integration/
 ├── 14_Languages/      ← C, Cpp, CSharp, Python, Rust, TypeScript, Java
 ├── 15_Algorithms_DataStructures/
-├── 16_AntiPatterns/   ← anti-pattern *generici*
+├── 16_AntiPatterns/   ← *generic* anti-patterns
 ├── 17_Real_World/     ← case studies, postmortems
 ├── 18_Snippets/
-├── 19_ADR/            ← decisioni architetturali (questo file ne è ADR-0001)
+├── 19_ADR/            ← architectural decisions (this file is ADR-0001)
 ├── 20_DDD/
 ├── 21_Cloud_Native/
 ├── 22_AI_ML_Integration/
@@ -57,63 +57,63 @@ dev-wiki/
 └── 99_Resources/
 ```
 
-### Template per topic foglia (9 file + Playground/)
+### Per-topic template (9 files + Playground/)
 
 ```
 Topic_Name/
-├── README.md              ← hub: frontmatter YAML + overview + link
-├── When_To_Use.md         ← casi d'uso, indicatori, decision tree (Mermaid)
-├── Tradeoffs.md           ← pro/contro, performance characteristics, alternative
-├── Example_Simple.md      ← esempio minimale eseguibile
-├── Example_Real.md        ← esempio production-like
+├── README.md              ← hub: YAML frontmatter + overview + links
+├── When_To_Use.md         ← use cases, indicators, decision tree (Mermaid)
+├── Tradeoffs.md           ← pros/cons, performance characteristics, alternatives
+├── Example_Simple.md      ← minimal runnable example
+├── Example_Real.md        ← production-like example
 ├── Diagrams.md            ← Mermaid / PlantUML / C4
 ├── Checklist.md           ← implementation, review, production readiness
-├── Topic_AntiPatterns.md  ← anti-pattern *specifici di questo topic*
+├── Topic_AntiPatterns.md  ← anti-patterns *specific to this topic*
 ├── Notes.md               ← insights, edge cases, gotchas, open questions
-└── Playground/            ← codice eseguibile
+└── Playground/            ← runnable code
 ```
 
-### Regole chiave
+### Key rules
 
-1. **Anti-duplicazione**: il `README.md` è un hub leggero. Ogni informazione vive in **un solo file**.
-2. **Frontmatter YAML obbligatorio** in `README.md` (`title`, `section`, `status`, `difficulty`, `tags`, `prerequisites`, `related`, `last_updated`, `reading_time_min`).
-3. **Tag auto-derivati dal path** + tag tematici trasversali manuali.
-4. **Anti-pattern generici** in `16_AntiPatterns/`. **Anti-pattern del topic** in `Topic_AntiPatterns.md`.
-5. **Topic minimi vs completi**: per topic semplici basta `README.md` + `Notes.md`; gli altri file restano scheletro.
-6. **Diagrammi sempre in plain text** (Mermaid preferito), mai screenshot.
-7. **Naming**: `PascalCase_Snake_Case`, inglese, niente accenti né spazi.
-8. **Scaffolder idempotente**: `scaffold_topics.sh` non sovrascrive di default; `FORCE=1` per migrazioni.
+1. **Anti-duplication**: the `README.md` is a lightweight hub. Each piece of information lives in **one file only**.
+2. **Mandatory YAML frontmatter** in `README.md` (`title`, `section`, `status`, `difficulty`, `tags`, `prerequisites`, `related`, `last_updated`, `reading_time_min`).
+3. **Auto-derived path tags** + manually added cross-cutting thematic tags.
+4. **Generic anti-patterns** go in `16_AntiPatterns/`. **Topic-specific anti-patterns** go in `Topic_AntiPatterns.md`.
+5. **Minimal vs full topics**: simple topics need only `README.md` + `Notes.md`; the rest stays as skeleton.
+6. **Diagrams always in plain text** (Mermaid preferred), never screenshots.
+7. **Naming**: `PascalCase_Snake_Case`, English, no accents or spaces.
+8. **Idempotent scaffolder**: `scaffold_topics.sh` doesn't overwrite by default; `FORCE=1` for migrations.
 
-Le regole operative complete sono in [`00_Index/CONVENTIONS.md`](../00_Index/CONVENTIONS.md).
+The full operational rules are in [`00_Index/CONVENTIONS.md`](../00_Index/CONVENTIONS.md).
 
 ## Consequences
 
 ### Positive
-- Struttura prevedibile: chiunque trovi un topic sa già dove sono trade-off, esempi, antipattern.
-- Frontmatter YAML abilita automazione futura (tag index dinamico, filtro per status, ecc.).
-- 28 sezioni top-level con numerazione fissa danno ordine visivo immediato.
-- Scaffolder + lista `TOPICS=()` rende l'aggiunta di nuovi topic una riga di codice.
-- Migrazioni del template gestibili tramite `FORCE=1`.
+- Predictable structure: anyone landing on a topic immediately knows where trade-offs, examples, and anti-patterns are.
+- YAML frontmatter enables future automation (dynamic tag index, filter by status, etc.).
+- 28 top-level sections with fixed numbering provide instant visual order.
+- Scaffolder + `TOPICS=()` list makes adding a new topic a one-line change.
+- Template migrations are manageable via `FORCE=1`.
 
 ### Negative
-- 9 file per topic = molta scaffoldatura iniziale. 337 topic × 9 file = ~3000 file di skeleton. Onere visivo per chi naviga le cartelle prima che siano scritti.
-- Frontmatter va mantenuto a mano: rischio drift se non c'è un linter.
-- I link interni `[[Topic_Name]]` placeholder vanno convertiti in path relativi quando si scrive contenuto vero — facile dimenticarsene.
+- 9 files per topic = a lot of initial scaffolding. 337 topics × 9 files ≈ 3,000 skeleton files. Visual overhead when browsing folders before content is written.
+- Frontmatter must be maintained by hand: drift risk without a linter.
+- Placeholder wiki-style links `[[Topic_Name]]` need to be converted to relative paths when real content is written — easy to forget.
 
 ### Neutral
-- La distinzione `Topic_AntiPatterns.md` vs `16_AntiPatterns/` richiede disciplina nel decidere dove va una cosa.
-- L'aggiunta di sezioni 20-26 (DDD, Cloud Native, AI/ML, ecc.) è una scelta opinionated che si discosta dalle wiki tradizionali ma riflette le esigenze 2026.
+- The distinction `Topic_AntiPatterns.md` vs `16_AntiPatterns/` requires discipline when deciding where something belongs.
+- Adding sections 20-26 (DDD, Cloud Native, AI/ML, etc.) is an opinionated choice that diverges from traditional wikis but reflects 2026 needs.
 
 ## Alternatives considered
 
-- **File unico per topic** (`Topic.md` con tutte le sezioni in un solo file): più snello, ma diventa ingestibile per topic complessi (CQRS, Event Sourcing, Kafka). Scartato.
-- **Notion / Confluence / GitBook**: comodi per editing, ma lock-in, no version control granulare, no `grep`. Scartato a favore di Markdown su filesystem.
-- **Categorie aggiuntive come sotto-sezioni** (es. DDD dentro 02_Architecture): perde visibilità. Scartato a favore di top-level dedicato.
-- **Solo template a 7 file** (versione iniziale, senza Diagrams/Checklist): mancavano i diagrammi (cruciali per architettura) e la checklist di production readiness. Sostituito dal template a 9 file.
-- **README.md con tutto in un file**: causava duplicazione massiccia con When_To_Use/Tradeoffs/Examples. Sostituito dall'approccio "README come hub".
+- **Single file per topic** (`Topic.md` with all sections in one file): leaner, but unmanageable for complex topics (CQRS, Event Sourcing, Kafka). Rejected.
+- **Notion / Confluence / GitBook**: convenient for editing, but lock-in, no granular version control, no `grep`. Rejected in favor of Markdown on the filesystem.
+- **Additional categories as sub-sections** (e.g., DDD under 02_Architecture): loses visibility. Rejected in favor of a dedicated top-level section.
+- **Initial 7-file template** (without Diagrams/Checklist): missing diagrams (crucial for architecture) and a production readiness checklist. Replaced by the 9-file template.
+- **README.md with everything in one file**: caused massive duplication with When_To_Use/Tradeoffs/Examples. Replaced by the "README as hub" approach.
 
 ## Notes
 
-- Questo ADR sostituisce il documento `WIKI_PLAN.md` originale (rimosso dalla root del repo).
-- Future modifiche strutturali (es. aggiunta di nuove sezioni top-level, cambio template) richiederanno un nuovo ADR che superseda parti di questo.
-- Lo scaffolder è in `scaffold_topics.sh` e `scaffold_specials.sh` nella root del progetto.
+- This ADR replaces the original `WIKI_PLAN.md` document (removed from the repo root).
+- Future structural changes (e.g., new top-level sections, template change) will require a new ADR that supersedes parts of this one.
+- The scaffolder lives in `scaffold_topics.sh` and `scaffold_specials.sh` at the project root.

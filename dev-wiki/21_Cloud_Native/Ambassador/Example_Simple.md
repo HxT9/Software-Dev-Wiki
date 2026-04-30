@@ -1,15 +1,15 @@
 # Simple Example - Ambassador
 
 ## Goal
-Obiettivo dell'esempio in una riga.
+One-line statement of the example's goal.
 
 ## Explanation
-Spiegazione passo-passo.
+Step-by-step explanation.
 
 ## Code
 
 ```
-# Codice minimale, isolato, eseguibile
+# Minimal, isolated, runnable code
 ```
 
 ## Key Takeaways

@@ -1,8 +1,8 @@
 # Serialization
 
-Formati: JSON, Protobuf, Avro, MessagePack.
+Formats: JSON, Protobuf, Avro, MessagePack.
 
-## Topic in questa sezione
+## Topics in this section
 - [Avro](./Avro/)
 - [JSON](./JSON/)
 - [MessagePack](./MessagePack/)

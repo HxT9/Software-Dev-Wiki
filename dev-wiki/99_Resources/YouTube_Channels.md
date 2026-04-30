@@ -1,9 +1,9 @@
 # YouTube Channels
 
-Canali YouTube tecnici da seguire.
+Technical YouTube channels worth following.
 
 ## Format
-- [Nome canale](url) — tag: `#area`. Note: di cosa parla.
+- [Channel name](url) — tag: `#area`. Notes: what it covers.
 
 ## Architecture & System Design
 -

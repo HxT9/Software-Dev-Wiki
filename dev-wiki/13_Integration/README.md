@@ -1,9 +1,10 @@
 # 13 Integration
 
-Message broker e pattern di messaggistica.
+Message brokers, messaging patterns, serialization.
 
-## Topic in questa sezione
+## Topics in this section
 - [Message_Brokers](./Message_Brokers/)
 - [Patterns](./Patterns/)
+- [Serialization](./Serialization/)
 
 ## Tags

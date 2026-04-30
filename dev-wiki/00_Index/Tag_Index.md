@@ -1,34 +1,34 @@
 # Tag Index
 
-Indice trasversale per tag. Ogni `README.md` di topic dovrebbe terminare con una sezione `## Tags`.
+Cross-cutting index by tag. Each topic's `README.md` should end with a `## Tags` section.
 
-## Tag principali
-- `#performance` — argomenti che impattano la velocità del sistema
-- `#scalability` — argomenti relativi alla crescita orizzontale/verticale
-- `#backend` — argomenti tipici lato server
-- `#frontend` — argomenti tipici lato client
-- `#distributed` — sistemi multi-nodo
-- `#concurrency` — multi-thread, async, parallelismo
-- `#security` — sicurezza applicativa
-- `#testing` — strategie e tool di test
-- `#data` — persistenza, query, modellazione
-- `#networking` — protocolli, API, transport
-- `#devops` — build, deploy, infrastruttura
-- `#observability` — log, metriche, tracing
-- `#architecture` — pattern e decisioni di alto livello
-- `#patterns` — design pattern classici e moderni
-- `#antipattern` — cose da evitare
+## Main tags
+- `#performance` — topics that impact system speed
+- `#scalability` — topics related to horizontal/vertical growth
+- `#backend` — typical server-side topics
+- `#frontend` — typical client-side topics
+- `#distributed` — multi-node systems
+- `#concurrency` — multi-threading, async, parallelism
+- `#security` — application security
+- `#testing` — test strategies and tools
+- `#data` — persistence, querying, modeling
+- `#networking` — protocols, APIs, transport
+- `#devops` — build, deploy, infrastructure
+- `#observability` — logs, metrics, tracing
+- `#architecture` — high-level patterns and decisions
+- `#patterns` — classic and modern design patterns
+- `#antipattern` — things to avoid
 - `#cpp` `#csharp` `#python` `#c` `#rust` `#typescript` `#java` — language-specific
 - `#ddd` — domain-driven design
 - `#cloud` — cloud-native, serverless, multi-tenancy
-- `#ai` `#ml` `#llm` — AI/ML integration in sistemi classici
+- `#ai` `#ml` `#llm` — AI/ML integration in classic systems
 - `#resilience` — fault tolerance, chaos, graceful degradation
-- `#data-engineering` — pipeline, ETL, streaming
-- `#refactoring` — tecniche e catalogo
+- `#data-engineering` — pipelines, ETL, streaming
+- `#refactoring` — techniques and catalog
 - `#docs` — documentation, diagramming, code review
 
-## Come popolare questo file
-Quando aggiungi un tag a un topic, aggiungi qui sotto una voce con il link al topic.
+## How to populate this file
+When you add a tag to a topic, add an entry below with a link to the topic.
 
 ### #performance
 -

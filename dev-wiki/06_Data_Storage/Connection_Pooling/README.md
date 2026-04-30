@@ -6,37 +6,37 @@ difficulty: intermediate
 tags: [data_storage]
 prerequisites: []
 related: []
-last_updated: 2026-04-29
+last_updated: 2026-04-30
 reading_time_min: 10
 ---
 
 # Connection Pooling
 
 ## Overview
-Una/due frasi che spiegano cos'è questo topic e perché esiste.
+One or two sentences explaining what this topic is and why it exists.
 
 ## Problem
-Quale problema concreto risolve?
+What concrete problem does it solve?
 -
 
 ## Key Concepts
-Concetti chiave (definirli brevemente, linkare a glossario o ad altri topic se serve).
+Key concepts (define each briefly; link to a glossary or to other topics when useful).
 -
 
 ## Prerequisites
-Cosa è utile sapere prima di leggere questo topic.
+What's helpful to know before reading this topic.
 - [[OtherTopic]]
 
-## Approfondimenti
-- [When to Use](./When_To_Use.md) — casi d'uso, indicatori, decision tree
-- [Trade-offs](./Tradeoffs.md) — pro, contro, performance, alternative
-- [Simple Example](./Example_Simple.md) — esempio minimale
-- [Real World Example](./Example_Real.md) — esempio production-like
-- [Diagrams](./Diagrams.md) — diagrammi Mermaid/PlantUML/C4
-- [Checklist](./Checklist.md) — implementazione, review, production readiness
-- [Topic Anti-Patterns](./Topic_AntiPatterns.md) — anti-pattern *specifici di questo topic*
-- [Notes](./Notes.md) — insights, edge case, gotchas
-- [Playground](./Playground/) — codice eseguibile
+## Deep Dives
+- [When to Use](./When_To_Use.md) — use cases, indicators, decision tree
+- [Trade-offs](./Tradeoffs.md) — pros, cons, performance, alternatives
+- [Simple Example](./Example_Simple.md) — minimal example
+- [Real World Example](./Example_Real.md) — production-like example
+- [Diagrams](./Diagrams.md) — Mermaid / PlantUML / C4 diagrams
+- [Checklist](./Checklist.md) — implementation, review, production readiness
+- [Topic Anti-Patterns](./Topic_AntiPatterns.md) — anti-patterns *specific to this topic*
+- [Notes](./Notes.md) — insights, edge cases, gotchas
+- [Playground](./Playground/) — runnable code
 
 ## Related Topics
 - [[OtherTopic]]

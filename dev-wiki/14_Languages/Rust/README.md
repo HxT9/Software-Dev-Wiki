@@ -2,7 +2,7 @@
 
 Ownership, lifetimes, traits, async, macros, Cargo.
 
-## Topic in questa sezione
+## Topics in this section
 - [Async](./Async/)
 - [Cargo](./Cargo/)
 - [Lifetimes](./Lifetimes/)

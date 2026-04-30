@@ -1,6 +1,6 @@
 # Courses
 
-Corsi (free / paid) per area.
+Courses (free / paid) by area.
 
 ## Format
-- [Titolo](url) — piattaforma. Livello: beginner/intermediate/advanced. Tag: `#area`.
+- [Title](url) — platform. Level: beginner/intermediate/advanced. Tag: `#area`.

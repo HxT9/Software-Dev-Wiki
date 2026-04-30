@@ -1,10 +1,10 @@
 # Playground - Dynamic Programming
 
-Mini progetti dimostrativi e codice eseguibile per Dynamic Programming.
+Runnable mini projects and example code for Dynamic Programming.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

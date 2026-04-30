@@ -1,10 +1,10 @@
 # Playground - Connection Pooling
 
-Mini progetti dimostrativi e codice eseguibile per Connection Pooling.
+Runnable mini projects and example code for Connection Pooling.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

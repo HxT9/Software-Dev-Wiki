@@ -1,29 +1,29 @@
 # When to Use - Lifetimes
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Lifetimes?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Lifetimes]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Lifetimes?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Lifetimes]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Lifetimes è la scelta giusta.
+- Scenario 1: context, constraints, why Lifetimes is the right call.
 -
 

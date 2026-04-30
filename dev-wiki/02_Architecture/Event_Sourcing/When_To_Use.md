@@ -1,29 +1,29 @@
 # When to Use - Event Sourcing
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Event Sourcing?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Event Sourcing]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Event Sourcing?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Event Sourcing]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Event Sourcing è la scelta giusta.
+- Scenario 1: context, constraints, why Event Sourcing is the right call.
 -
 

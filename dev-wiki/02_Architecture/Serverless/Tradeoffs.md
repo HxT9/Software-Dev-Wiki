@@ -9,7 +9,7 @@
 -
 
 ## Performance Characteristics
-> Riempi solo i campi rilevanti per il topic. Rimuovi quelli che non si applicano.
+> Fill in only the fields relevant to this topic. Remove the ones that don't apply.
 - **Throughput**:
 - **Latency**:
 - **Memory footprint**:
@@ -30,6 +30,6 @@
 - On-call burden:
 
 ## Alternatives
-- [[Alternative1]] — quando preferirla
-- [[Alternative2]] — quando preferirla
+- [[Alternative1]] — when to prefer it
+- [[Alternative2]] — when to prefer it
 

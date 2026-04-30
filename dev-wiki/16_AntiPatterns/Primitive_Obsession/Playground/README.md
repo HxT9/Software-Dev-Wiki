@@ -1,10 +1,10 @@
 # Playground - Primitive Obsession
 
-Mini progetti dimostrativi e codice eseguibile per Primitive Obsession.
+Runnable mini projects and example code for Primitive Obsession.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

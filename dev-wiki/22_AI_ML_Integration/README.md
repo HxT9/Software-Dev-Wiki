@@ -1,8 +1,8 @@
 # 22 AI/ML Integration
 
-Integrare LLM e ML in sistemi software classici (RAG, agenti, tool calling).
+Integrating LLMs and ML into traditional software systems (RAG, agents, tool calling).
 
-## Topic in questa sezione
+## Topics in this section
 - [Agent_Patterns](./Agent_Patterns/)
 - [Cost_Latency_Optimization](./Cost_Latency_Optimization/)
 - [Embeddings](./Embeddings/)

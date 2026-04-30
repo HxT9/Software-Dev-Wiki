@@ -1,29 +1,29 @@
 # When to Use - E2E Testing
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando E2E Testing?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera E2E Testing]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering E2E Testing?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider E2E Testing]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè E2E Testing è la scelta giusta.
+- Scenario 1: context, constraints, why E2E Testing is the right call.
 -
 

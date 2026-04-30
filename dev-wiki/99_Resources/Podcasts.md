@@ -1,11 +1,11 @@
 # Podcasts
 
-Podcast di software development e affini.
+Software development and adjacent podcasts.
 
 ## Format
-- [Nome](url) — host. Tag: `#area`. Note: di cosa parla.
+- [Name](url) — host. Tag: `#area`. Notes: what it's about.
 
-## Generalisti
+## General
 -
 
 ## Architecture / Backend

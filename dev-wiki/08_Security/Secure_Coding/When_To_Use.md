@@ -1,29 +1,29 @@
 # When to Use - Secure Coding
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Secure Coding?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Secure Coding]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Secure Coding?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Secure Coding]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Secure Coding è la scelta giusta.
+- Scenario 1: context, constraints, why Secure Coding is the right call.
 -
 

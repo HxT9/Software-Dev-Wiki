@@ -1,7 +1,7 @@
 # Notes - ACID vs BASE
 
 ## Insights
-Cose che ho capito facendolo.
+Things learned in the field.
 -
 
 ## Edge Cases

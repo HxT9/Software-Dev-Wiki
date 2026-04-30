@@ -1,8 +1,8 @@
 # C
 
-Memory model, pointer, undefined behavior, build system.
+Memory model, pointers, undefined behavior, build system.
 
-## Topic in questa sezione
+## Topics in this section
 - [Build_System](./Build_System/)
 - [Memory_Management](./Memory_Management/)
 - [Pointers](./Pointers/)

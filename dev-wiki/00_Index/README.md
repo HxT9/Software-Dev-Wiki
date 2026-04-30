@@ -1,17 +1,17 @@
 # 00 Index
 
-Punto d'ingresso della wiki.
+Entry point of the wiki.
 
-## Mappa rapida
-- [Convenzioni](./CONVENTIONS.md) — regole per scrivere topic
-- [Roadmap di studio](./Roadmap.md)
+## Quick map
+- [Conventions](./CONVENTIONS.md) — rules for writing topics
+- [Study Roadmap](./Roadmap.md)
 - [Tag Index](./Tag_Index.md)
-- [Home della wiki](../)
+- [Wiki home](../)
 
-## Sezioni
-1. [Foundations](../01_Foundations/) — principi base
-2. [Architecture](../02_Architecture/) — pattern architetturali
-3. [Design Patterns](../03_Design_Patterns/) — GoF e moderni
+## Sections
+1. [Foundations](../01_Foundations/) — core principles
+2. [Architecture](../02_Architecture/) — architectural patterns
+3. [Design Patterns](../03_Design_Patterns/) — GoF and modern
 4. [Concurrency](../04_Concurrency/)
 5. [Distributed Systems](../05_Distributed_Systems/)
 6. [Data Storage](../06_Data_Storage/)
@@ -37,11 +37,11 @@ Punto d'ingresso della wiki.
 26. [Refactoring](../26_Refactoring/)
 99. [Resources](../99_Resources/)
 
-## Come contribuire
-- Leggi [CONVENTIONS.md](./CONVENTIONS.md) prima di iniziare.
-- Rispetta il template (9 file + Playground per topic).
-- Compila il frontmatter YAML in `README.md` (status, tags, prerequisites, last_updated).
-- Niente duplicazione: il README è un hub, i contenuti vivono nei file dedicati.
-- Aggiorna `Tag_Index.md` quando introduci un tag nuovo.
-- Aggiorna `Roadmap.md` se il topic appartiene a un livello di studio.
-- Per una decisione architetturale, scrivi un nuovo ADR in `19_ADR/`.
+## How to contribute
+- Read [CONVENTIONS.md](./CONVENTIONS.md) before starting.
+- Respect the template (9 files + Playground per topic).
+- Fill the YAML frontmatter in `README.md` (status, tags, prerequisites, last_updated).
+- No duplication: the README is a hub, content lives in dedicated files.
+- Update `Tag_Index.md` when introducing a new tag.
+- Update `Roadmap.md` if the topic belongs to a study level.
+- For an architectural decision, write a new ADR in `19_ADR/`.

@@ -1,4 +1,4 @@
 # Snippets - Cpp
 
-Snippet riutilizzabili in Cpp.
-Aggiungi un file `.md` per ogni snippet seguendo il template in [../](../).
+Reusable snippets in Cpp.
+Add a `.md` file for each snippet following the template described in [../](../).

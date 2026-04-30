@@ -1,7 +1,7 @@
 # Notes - Principle of Least Astonishment
 
 ## Insights
-Cose che ho capito facendolo.
+Things learned in the field.
 -
 
 ## Edge Cases

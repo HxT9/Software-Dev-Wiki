@@ -1,10 +1,14 @@
 # Structural Patterns
 
-Pattern per la composizione di classi e oggetti.
+Patterns for class and object composition.
 
-## Topic in questa sezione
+## Topics in this section
 - [Adapter](./Adapter/)
+- [Bridge](./Bridge/)
+- [Composite](./Composite/)
 - [Decorator](./Decorator/)
 - [Facade](./Facade/)
+- [Flyweight](./Flyweight/)
+- [Proxy](./Proxy/)
 
 ## Tags

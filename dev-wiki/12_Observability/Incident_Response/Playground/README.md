@@ -1,10 +1,10 @@
 # Playground - Incident Response
 
-Mini progetti dimostrativi e codice eseguibile per Incident Response.
+Runnable mini projects and example code for Incident Response.
 
-## Come eseguire
-Comandi e prerequisiti per far girare gli esempi.
+## How to run
+Commands and prerequisites to execute the examples.
 
-## Esperimenti
-- Esperimento 1: ipotesi -> risultato.
+## Experiments
+- Experiment 1: hypothesis -> result.
 

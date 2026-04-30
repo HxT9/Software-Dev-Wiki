@@ -1,29 +1,29 @@
 # When to Use - Gossip Protocols
 
 ## Use Cases
-Casi d'uso concreti con un minimo di contesto.
+Concrete use cases with a bit of context.
 -
 -
 
 ## When to Use
-Segnali che indicano che è la scelta giusta.
+Signals that suggest this is the right choice.
 -
 -
 
 ## When NOT to Use
-Segnali che indicano che è la scelta sbagliata.
+Signals that suggest this is the wrong choice.
 -
 -
 
 ## Decision Tree
 ```mermaid
 flowchart TD
-  Q[Sto valutando Gossip Protocols?] --> Q1[Ho il problema X?]
-  Q1 -->|Si| OK[Considera Gossip Protocols]
-  Q1 -->|No| NO[Probabilmente non serve]
+  Q[Considering Gossip Protocols?] --> Q1[Do I have problem X?]
+  Q1 -->|Yes| OK[Consider Gossip Protocols]
+  Q1 -->|No| NO[Probably not needed]
 ```
 
 ## Real Scenarios
-- Scenario 1: contesto, vincoli, perchè Gossip Protocols è la scelta giusta.
+- Scenario 1: context, constraints, why Gossip Protocols is the right call.
 -
 

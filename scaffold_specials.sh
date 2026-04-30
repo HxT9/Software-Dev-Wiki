@@ -1,14 +1,16 @@
 #!/usr/bin/env bash
-# Crea i file speciali (README di categoria, ADR, Resources, Snippets, Real_World).
+# Generate special files (category READMEs, ADR templates, Resources, Snippets, Real_World).
+# Idempotent by default. Set FORCE=1 to overwrite existing files.
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")" && pwd)/dev-wiki"
+FORCE="${FORCE:-0}"
 
-write_if_missing() {
+write_file() {
   local path="$1"
   shift
-  if [[ -e "$path" ]]; then
+  if [[ -e "$path" && "$FORCE" != "1" ]]; then
     return 0
   fi
   printf '%s' "$*" > "$path"
@@ -18,11 +20,11 @@ category_readme() {
   local dir="$1"
   local title="$2"
   local subtitle="$3"
-  write_if_missing "$ROOT/$dir/README.md" "# ${title}
+  write_file "$ROOT/$dir/README.md" "# ${title}
 
 ${subtitle}
 
-## Topic in questa sezione
+## Topics in this section
 $(cd "$ROOT/$dir" && for d in */; do
   d="${d%/}"
   if [[ "$d" != "Playground" ]]; then
@@ -34,71 +36,71 @@ done)
 "
 }
 
-# Categorie con descrizione
-category_readme "01_Foundations" "01 Foundations" "Principi fondamentali del software design."
-category_readme "02_Architecture" "02 Architecture" "Pattern architetturali per organizzare il codice a livello macro."
-category_readme "03_Design_Patterns" "03 Design Patterns" "Pattern classici (GoF) e moderni, raggruppati per categoria."
-category_readme "03_Design_Patterns/Creational" "Creational Patterns" "Pattern per la creazione di oggetti."
-category_readme "03_Design_Patterns/Structural" "Structural Patterns" "Pattern per la composizione di classi e oggetti."
-category_readme "03_Design_Patterns/Behavioral" "Behavioral Patterns" "Pattern per la comunicazione e la responsabilità tra oggetti."
-category_readme "03_Design_Patterns/Concurrency" "Concurrency Patterns" "Pattern per coordinare lavoro tra thread/processi."
-category_readme "03_Design_Patterns/Architectural" "Architectural Patterns" "Pattern di organizzazione applicativa (MVC, MVVM, Repository, ecc.)."
-category_readme "04_Concurrency" "04 Concurrency" "Threading, async, modelli concorrenti e problemi tipici."
-category_readme "05_Distributed_Systems" "05 Distributed Systems" "Pattern e teoremi per sistemi multi-nodo."
-category_readme "06_Data_Storage" "06 Data Storage" "Persistenza: SQL, NoSQL, indici, transazioni, migrazioni."
-category_readme "07_Networking" "07 Networking" "Protocolli, API design, sicurezza di trasporto."
-category_readme "08_Security" "08 Security" "Sicurezza applicativa: OWASP, identity, secure coding."
-category_readme "09_Testing" "09 Testing" "Strategie di test dal unit all'E2E."
-category_readme "10_DevOps" "10 DevOps" "CI/CD, container, orchestrazione, deploy."
-category_readme "11_Performance" "11 Performance" "Profiling, caching, bottleneck, load balancing."
-category_readme "12_Observability" "12 Observability" "Log strutturato, metriche, tracing distribuito."
-category_readme "13_Integration" "13 Integration" "Message broker, pattern di messaggistica, serializzazione."
-category_readme "13_Integration/Message_Brokers" "Message Brokers" "Broker concreti: RabbitMQ, Kafka, NATS, Redis Streams, AWS SQS/SNS."
+# Categories with a description
+category_readme "01_Foundations" "01 Foundations" "Fundamental software design principles."
+category_readme "02_Architecture" "02 Architecture" "Architectural patterns to organize code at the macro level."
+category_readme "03_Design_Patterns" "03 Design Patterns" "Classic (GoF) and modern patterns, grouped by category."
+category_readme "03_Design_Patterns/Creational" "Creational Patterns" "Patterns for object creation."
+category_readme "03_Design_Patterns/Structural" "Structural Patterns" "Patterns for class and object composition."
+category_readme "03_Design_Patterns/Behavioral" "Behavioral Patterns" "Patterns for communication and responsibility between objects."
+category_readme "03_Design_Patterns/Concurrency" "Concurrency Patterns" "Patterns for coordinating work across threads/processes."
+category_readme "03_Design_Patterns/Architectural" "Architectural Patterns" "Application organization patterns (MVC, MVVM, Repository, etc.)."
+category_readme "04_Concurrency" "04 Concurrency" "Threading, async, concurrent models, and typical pitfalls."
+category_readme "05_Distributed_Systems" "05 Distributed Systems" "Patterns and theorems for multi-node systems."
+category_readme "06_Data_Storage" "06 Data Storage" "Persistence: SQL, NoSQL, indexing, transactions, migrations."
+category_readme "07_Networking" "07 Networking" "Protocols, API design, transport security."
+category_readme "08_Security" "08 Security" "Application security: OWASP, identity, secure coding."
+category_readme "09_Testing" "09 Testing" "Testing strategies from unit to E2E."
+category_readme "10_DevOps" "10 DevOps" "CI/CD, containers, orchestration, deployment."
+category_readme "11_Performance" "11 Performance" "Profiling, caching, bottlenecks, load balancing."
+category_readme "12_Observability" "12 Observability" "Structured logging, metrics, distributed tracing."
+category_readme "13_Integration" "13 Integration" "Message brokers, messaging patterns, serialization."
+category_readme "13_Integration/Message_Brokers" "Message Brokers" "Concrete brokers: RabbitMQ, Kafka, NATS, Redis Streams, AWS SQS/SNS."
 category_readme "13_Integration/Patterns" "Integration Patterns" "PubSub, Saga, Outbox, DLQ, Competing Consumers, Request/Reply."
-category_readme "13_Integration/Serialization" "Serialization" "Formati: JSON, Protobuf, Avro, MessagePack."
-category_readme "14_Languages" "14 Languages" "Approfondimenti per linguaggio."
-category_readme "14_Languages/C" "C" "Memory model, pointer, undefined behavior, build system."
-category_readme "14_Languages/Cpp" "C++" "RAII, templates, move semantics, STL, concorrenza."
+category_readme "13_Integration/Serialization" "Serialization" "Formats: JSON, Protobuf, Avro, MessagePack."
+category_readme "14_Languages" "14 Languages" "Per-language deep dives."
+category_readme "14_Languages/C" "C" "Memory model, pointers, undefined behavior, build system."
+category_readme "14_Languages/Cpp" "C++" "RAII, templates, move semantics, STL, concurrency."
 category_readme "14_Languages/CSharp" "C#" "Async, GC, LINQ, Span<T>, source generators, internals."
 category_readme "14_Languages/Python" "Python" "GIL, asyncio, type hints, dataclasses, packaging."
 category_readme "14_Languages/Rust" "Rust" "Ownership, lifetimes, traits, async, macros, Cargo."
 category_readme "14_Languages/TypeScript" "TypeScript" "Type system, generics, decorators, modules, compilation."
 category_readme "14_Languages/Java" "Java" "JVM internals, GC, concurrency, streams, reactive, build."
-category_readme "15_Algorithms_DataStructures" "15 Algorithms & Data Structures" "Pratico: quando usare cosa, trade-off reali."
-category_readme "16_AntiPatterns" "16 Anti-Patterns" "Cose da riconoscere ed evitare."
+category_readme "15_Algorithms_DataStructures" "15 Algorithms & Data Structures" "Practical: when to use what, real-world trade-offs."
+category_readme "16_AntiPatterns" "16 Anti-Patterns" "Things to recognize and avoid."
 
-# Nuove sezioni top-level (20-26)
-category_readme "20_DDD" "20 Domain-Driven Design" "Pattern strategici e tattici per modellare il dominio."
+# New top-level sections (20-26)
+category_readme "20_DDD" "20 Domain-Driven Design" "Strategic and tactical patterns for domain modeling."
 category_readme "21_Cloud_Native" "21 Cloud Native" "12-factor, sidecar, ambassador, multi-tenancy, FinOps."
-category_readme "22_AI_ML_Integration" "22 AI/ML Integration" "Integrare LLM e ML in sistemi software classici (RAG, agenti, tool calling)."
+category_readme "22_AI_ML_Integration" "22 AI/ML Integration" "Integrating LLMs and ML into traditional software systems (RAG, agents, tool calling)."
 category_readme "23_Resilience_Engineering" "23 Resilience Engineering" "Chaos, fault injection, backpressure, bulkhead, graceful degradation."
-category_readme "24_Data_Engineering" "24 Data Engineering" "Pipeline, batch vs streaming, data lake/warehouse/lakehouse."
-category_readme "25_Documentation" "25 Documentation & Communication" "Documentation as code, C4, diagrammi, code review, pairing."
-category_readme "26_Refactoring" "26 Refactoring" "Catalogo refactoring, Strangler Fig, Branch by Abstraction, Parallel Change."
+category_readme "24_Data_Engineering" "24 Data Engineering" "Pipelines, batch vs streaming, data lake/warehouse/lakehouse."
+category_readme "25_Documentation" "25 Documentation & Communication" "Documentation as code, C4, diagrams, code review, pairing."
+category_readme "26_Refactoring" "26 Refactoring" "Refactoring catalog, Strangler Fig, Branch by Abstraction, Parallel Change."
 
 # 17_Real_World
-write_if_missing "$ROOT/17_Real_World/README.md" "# 17 Real World
+write_file "$ROOT/17_Real_World/README.md" "# 17 Real World
 
-Esempi reali, case study e postmortem.
+Real-world examples, case studies, and postmortems.
 
-## Sottosezioni
-- [Case_Studies](./Case_Studies/) — analisi di scelte fatte in progetti reali
-- [Architecture_Examples](./Architecture_Examples/) — architetture complete documentate
-- [Postmortems](./Postmortems/) — incidenti, root cause, lezioni apprese
+## Subsections
+- [Case_Studies](./Case_Studies/) — analysis of decisions made in real projects
+- [Architecture_Examples](./Architecture_Examples/) — fully documented architectures
+- [Postmortems](./Postmortems/) — incidents, root cause, lessons learned
 "
 
-write_if_missing "$ROOT/17_Real_World/Case_Studies/README.md" "# Case Studies
+write_file "$ROOT/17_Real_World/Case_Studies/README.md" "# Case Studies
 
-Aggiungi un file per ogni case study seguendo il template.
+Add a file for each case study following the template.
 
 ## Template
-Vedi [Case_Study_Template.md](./Case_Study_Template.md).
+See [Case_Study_Template.md](./Case_Study_Template.md).
 "
 
-write_if_missing "$ROOT/17_Real_World/Case_Studies/Case_Study_Template.md" "# <Case Study Name>
+write_file "$ROOT/17_Real_World/Case_Studies/Case_Study_Template.md" "# <Case Study Name>
 
 ## Context
-Situazione reale.
+The real-world situation.
 
 ## Problem
 -
@@ -119,14 +121,14 @@ Situazione reale.
 -
 "
 
-write_if_missing "$ROOT/17_Real_World/Architecture_Examples/README.md" "# Architecture Examples
+write_file "$ROOT/17_Real_World/Architecture_Examples/README.md" "# Architecture Examples
 
-Architetture complete con diagrammi, scelte tecniche e razionale.
+Complete architectures with diagrams, technical choices, and rationale.
 "
 
-write_if_missing "$ROOT/17_Real_World/Postmortems/README.md" "# Postmortems
+write_file "$ROOT/17_Real_World/Postmortems/README.md" "# Postmortems
 
-Analisi di incidenti: timeline, root cause, impact, fix, action items.
+Incident analysis: timeline, root cause, impact, fix, action items.
 
 ## Template
 
@@ -137,22 +139,22 @@ Analisi di incidenti: timeline, root cause, impact, fix, action items.
 YYYY-MM-DD
 
 ## Summary
-Cosa è successo in 2-3 righe.
+What happened, in 2-3 lines.
 
 ## Timeline
-- HH:MM — evento
-- HH:MM — evento
+- HH:MM — event
+- HH:MM — event
 
 ## Root Cause
 -
 
 ## Impact
-- Utenti coinvolti:
-- Durata:
-- Servizi degradati:
+- Users affected:
+- Duration:
+- Degraded services:
 
 ## Resolution
-Cosa è stato fatto per risolvere.
+What was done to resolve it.
 
 ## Lessons Learned
 -
@@ -164,11 +166,11 @@ Cosa è stato fatto per risolvere.
 "
 
 # 18_Snippets
-write_if_missing "$ROOT/18_Snippets/README.md" "# 18 Snippets
+write_file "$ROOT/18_Snippets/README.md" "# 18 Snippets
 
-Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto.
+Reusable copy-paste snippets, organized by language/context.
 
-## Sezioni
+## Sections
 
 - [C](./C/)
 - [Cpp](./Cpp/)
@@ -179,49 +181,48 @@ Snippet riutilizzabili pronti copia-incolla, organizzati per linguaggio/contesto
 - [Bash](./Bash/)
 - [PowerShell](./PowerShell/)
 - [YAML](./YAML/) — Dockerfile, k8s, CI configs
-- [Regex](./Regex/) — espressioni regolari riutilizzabili
-- [Git](./Git/) — alias, hook, comandi utili
+- [Regex](./Regex/) — reusable regular expressions
+- [Git](./Git/) — aliases, hooks, useful commands
 
-## Struttura di uno snippet
+## Snippet structure
 
-Per ogni snippet crea un file \`.md\` con queste sezioni:
+For each snippet create a \`.md\` file with these sections:
 
-- **Title** (heading H1) — nome dello snippet.
-- **Description** — breve descrizione (1-2 righe).
-- **Code** — blocco di codice nel linguaggio appropriato (usa fence con language tag, es. \` \`\`\`python \`).
-- **Usage** — quando usarlo, contesto, prerequisiti.
-- **Notes** — caveat, varianti, alternative correlate.
+- **Title** (H1 heading) — name of the snippet.
+- **Description** — brief description (1-2 lines).
+- **Code** — code block in the appropriate language (use a fence with a language tag, e.g. \` \`\`\`python \`).
+- **Usage** — when to use it, context, prerequisites.
+- **Notes** — caveats, variants, related alternatives.
 "
 
-mkdir -p "$ROOT/18_Snippets/C"
 for lang in C Cpp CSharp Python TypeScript SQL Bash PowerShell YAML Regex Git; do
   mkdir -p "$ROOT/18_Snippets/$lang"
-  write_if_missing "$ROOT/18_Snippets/$lang/README.md" "# Snippets - ${lang}
+  write_file "$ROOT/18_Snippets/$lang/README.md" "# Snippets - ${lang}
 
-Snippet riutilizzabili in ${lang}.
-Aggiungi un file \`.md\` per ogni snippet seguendo il template descritto in [../](../).
+Reusable snippets in ${lang}.
+Add a \`.md\` file for each snippet following the template described in [../](../).
 "
 done
 
 # 19_ADR
-write_if_missing "$ROOT/19_ADR/README.md" "# 19 Architecture Decision Records
+write_file "$ROOT/19_ADR/README.md" "# 19 Architecture Decision Records
 
-Documenta decisioni architetturali con contesto, decisione e conseguenze.
+Document architectural decisions with context, decision, and consequences.
 
-## Convenzioni
-- Naming: \`NNNN_Short_Title.md\` (es: \`0001_Use_RabbitMQ.md\`).
-- Numerazione progressiva, mai riutilizzata.
-- Stato: \`Proposed\`, \`Accepted\`, \`Rejected\`, \`Superseded by ADR-XXXX\`.
-- Una decisione per file, mai accorpare.
+## Conventions
+- Naming: \`NNNN_Short_Title.md\` (e.g., \`0001_Use_RabbitMQ.md\`).
+- Sequential numbering, never reused.
+- Status: \`Proposed\`, \`Accepted\`, \`Rejected\`, \`Superseded by ADR-XXXX\`.
+- One decision per file, never combined.
 
 ## Template
-Vedi [TEMPLATE.md](./TEMPLATE.md).
+See [TEMPLATE.md](./TEMPLATE.md).
 
-## ADR esistenti
-_(nessuno ancora)_
+## Existing ADRs
+- [ADR-0001 — Wiki Structure and Conventions](./0001_Wiki_Structure_and_Conventions.md) — top-level structure, topic template, operational rules
 "
 
-write_if_missing "$ROOT/19_ADR/TEMPLATE.md" "# ADR-XXXX - <Title>
+write_file "$ROOT/19_ADR/TEMPLATE.md" "# ADR-XXXX - <Title>
 
 ## Status
 Proposed / Accepted / Rejected / Superseded by ADR-XXXX
@@ -230,10 +231,10 @@ Proposed / Accepted / Rejected / Superseded by ADR-XXXX
 YYYY-MM-DD
 
 ## Context
-Descrizione del problema, vincoli, forze in gioco.
+Description of the problem, constraints, forces at play.
 
 ## Decision
-Decisione presa.
+The decision taken.
 
 ## Consequences
 
@@ -247,17 +248,17 @@ Decisione presa.
 -
 
 ## Alternatives considered
-- **Alternativa A**: motivo per cui scartata.
-- **Alternativa B**: motivo per cui scartata.
+- **Alternative A**: reason it was rejected.
+- **Alternative B**: reason it was rejected.
 
 ## Notes
 -
 "
 
 # 99_Resources
-write_if_missing "$ROOT/99_Resources/README.md" "# 99 Resources
+write_file "$ROOT/99_Resources/README.md" "# 99 Resources
 
-Risorse esterne organizzate per tipo.
+External resources organized by type.
 
 - [Books](./Books.md)
 - [Articles](./Articles.md)
@@ -270,12 +271,12 @@ Risorse esterne organizzate per tipo.
 - [Communities](./Communities.md)
 "
 
-write_if_missing "$ROOT/99_Resources/Books.md" "# Books
+write_file "$ROOT/99_Resources/Books.md" "# Books
 
-Lista di libri di riferimento, raggruppati per area.
+List of reference books, grouped by area.
 
 ## Foundations
-- _<Titolo>_ — <Autore>. Note: ...
+- _<Title>_ — <Author>. Notes: ...
 
 ## Architecture
 -
@@ -296,17 +297,17 @@ Lista di libri di riferimento, raggruppati per area.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/Articles.md" "# Articles
+write_file "$ROOT/99_Resources/Articles.md" "# Articles
 
-Articoli, blog post, paper di rilievo.
+Articles, blog posts, and notable papers.
 
 ## Format
-- [Titolo](url) — autore/sito. Tag: \`#area\`. Note: 1-2 righe.
+- [Title](url) — author/site. Tag: \`#area\`. Notes: 1-2 lines.
 "
 
-write_if_missing "$ROOT/99_Resources/Tools.md" "# Tools
+write_file "$ROOT/99_Resources/Tools.md" "# Tools
 
-Tool utili raggruppati per area.
+Useful tools grouped by area.
 
 ## Profiling
 -
@@ -317,7 +318,7 @@ Tool utili raggruppati per area.
 ## CI/CD
 -
 
-## Containerizzazione
+## Containerization
 -
 
 ## Database
@@ -330,22 +331,22 @@ Tool utili raggruppati per area.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/Courses.md" "# Courses
+write_file "$ROOT/99_Resources/Courses.md" "# Courses
 
-Corsi (free / paid) per area.
+Courses (free / paid) by area.
 
 ## Format
-- [Titolo](url) — piattaforma. Livello: beginner/intermediate/advanced. Tag: \`#area\`.
+- [Title](url) — platform. Level: beginner/intermediate/advanced. Tag: \`#area\`.
 "
 
-write_if_missing "$ROOT/99_Resources/Podcasts.md" "# Podcasts
+write_file "$ROOT/99_Resources/Podcasts.md" "# Podcasts
 
-Podcast di software development e affini.
+Software development and adjacent podcasts.
 
 ## Format
-- [Nome](url) — host. Tag: \`#area\`. Note: di cosa parla.
+- [Name](url) — host. Tag: \`#area\`. Notes: what it's about.
 
-## Generalisti
+## General
 -
 
 ## Architecture / Backend
@@ -361,12 +362,12 @@ Podcast di software development e affini.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/Newsletters.md" "# Newsletters
+write_file "$ROOT/99_Resources/Newsletters.md" "# Newsletters
 
-Newsletter tecniche da seguire.
+Technical newsletters worth following.
 
 ## Format
-- [Nome](url) — autore. Frequenza: settimanale/mensile. Tag: \`#area\`.
+- [Name](url) — author. Frequency: weekly/monthly. Tag: \`#area\`.
 
 ## Backend & Architecture
 -
@@ -387,14 +388,14 @@ Newsletter tecniche da seguire.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/Conferences.md" "# Conferences
+write_file "$ROOT/99_Resources/Conferences.md" "# Conferences
 
-Conferenze rilevanti, in-person e online.
+Notable conferences, in-person and online.
 
 ## Format
-- [Nome](url) — frequenza/luogo. Tag: \`#area\`. Note: cosa la rende interessante.
+- [Name](url) — frequency/location. Tag: \`#area\`. Notes: why it's interesting.
 
-## Generaliste
+## General
 -
 
 ## Architecture & Backend
@@ -413,12 +414,12 @@ Conferenze rilevanti, in-person e online.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/YouTube_Channels.md" "# YouTube Channels
+write_file "$ROOT/99_Resources/YouTube_Channels.md" "# YouTube Channels
 
-Canali YouTube tecnici da seguire.
+Technical YouTube channels worth following.
 
 ## Format
-- [Nome canale](url) — tag: \`#area\`. Note: di cosa parla.
+- [Channel name](url) — tag: \`#area\`. Notes: what it covers.
 
 ## Architecture & System Design
 -
@@ -439,12 +440,12 @@ Canali YouTube tecnici da seguire.
 -
 "
 
-write_if_missing "$ROOT/99_Resources/Communities.md" "# Communities
+write_file "$ROOT/99_Resources/Communities.md" "# Communities
 
-Community di sviluppatori (Discord, Slack, Reddit, forum).
+Developer communities (Discord, Slack, Reddit, forums).
 
 ## Format
-- [Nome](url) — piattaforma. Tag: \`#area\`. Note: come entrare, cosa aspettarsi.
+- [Name](url) — platform. Tag: \`#area\`. Notes: how to join, what to expect.
 
 ## Reddit
 -
@@ -452,11 +453,11 @@ Community di sviluppatori (Discord, Slack, Reddit, forum).
 ## Discord / Slack
 -
 
-## Forum
+## Forums
 -
 
 ## Stack Exchange
 -
 "
 
-echo "Special files scaffolded."
+echo "Special files scaffolded. (FORCE=${FORCE})"
