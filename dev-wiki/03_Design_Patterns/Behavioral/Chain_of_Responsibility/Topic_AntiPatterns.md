@@ -1,8 +1,7 @@
 # Topic Anti-Patterns - Chain of Responsibility
 
 > Anti-patterns *specific to Chain of Responsibility*.
-> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
-> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
+> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../../16_AntiPatterns/).
 
 ## <Anti-Pattern Name>
 

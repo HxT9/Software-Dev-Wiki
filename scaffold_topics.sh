@@ -61,6 +61,16 @@ scaffold_topic() {
   local tags
   tags="$(derive_tags "$rel")"
 
+  # Build a "../" string with the right depth to reach back to dev-wiki/.
+  # Depth = number of path segments in $rel (e.g. "A/B/C" -> 3 -> "../../../").
+  local depth
+  depth=$(($(echo "$rel" | tr '/' '\n' | wc -l)))
+  local up_to_wiki=""
+  local i
+  for (( i=0; i<depth; i++ )); do
+    up_to_wiki="../${up_to_wiki}"
+  done
+
   mkdir -p "$dir"
 
   # Migration: remove old AntiPatterns.md (renamed to Topic_AntiPatterns.md).
@@ -286,8 +296,7 @@ What to look for during code review when this topic is involved.
   write_file "$dir/Topic_AntiPatterns.md" "# Topic Anti-Patterns - ${title}
 
 > Anti-patterns *specific to ${title}*.
-> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
-> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
+> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](${up_to_wiki}16_AntiPatterns/).
 
 ## <Anti-Pattern Name>
 

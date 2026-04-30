@@ -115,7 +115,7 @@ Runnable mini projects. Each Playground has its own `README.md` with execution i
 
 - **Internal links**: always relative (e.g., `[Bounded Context](../20_DDD/Bounded_Context/)`).
 - **Wiki-style links** (`[[Topic_Name]]`): allowed in placeholders, to be converted to relative links when real content is written.
-- **External links**: always with description (`[article title](url) — author/site`).
+- **External links**: always include a description, e.g. `[Article title](https://example.com/article) — author/site`.
 
 ---
 

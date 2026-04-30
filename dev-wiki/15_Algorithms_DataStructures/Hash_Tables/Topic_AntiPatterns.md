@@ -2,7 +2,6 @@
 
 > Anti-patterns *specific to Hash Tables*.
 > For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
-> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
 
 ## <Anti-Pattern Name>
 

@@ -1,0 +1,30 @@
+#!/usr/bin/env bash
+# Wiki pre-commit hook.
+# - For each staged README.md inside dev-wiki/, refresh the `last_updated` frontmatter.
+# - Re-stages the file so the timestamp lands in the same commit.
+#
+# Install with: bash tools/install_hooks.sh
+
+set -euo pipefail
+
+repo_root="$(git rev-parse --show-toplevel)"
+cd "$repo_root"
+
+mapfile -t staged < <(git diff --cached --name-only --diff-filter=ACM | grep -E '^dev-wiki/.*README\.md$' || true)
+
+if [[ ${#staged[@]} -eq 0 ]]; then
+  exit 0
+fi
+
+if ! command -v python >/dev/null 2>&1 && ! command -v python3 >/dev/null 2>&1; then
+  echo "[pre-commit] python not found, skipping last_updated refresh" >&2
+  exit 0
+fi
+
+python_cmd="python"
+command -v python3 >/dev/null 2>&1 && python_cmd="python3"
+
+"$python_cmd" tools/wiki.py touch "${staged[@]}"
+
+# Re-stage in case the timestamps changed.
+git add "${staged[@]}"

@@ -3,7 +3,7 @@
 Notable conferences, in-person and online.
 
 ## Format
-- [Name](url) — frequency/location. Tag: `#area`. Notes: why it's interesting.
+- [Name](https://example.com) — frequency/location. Tag: `#area`. Notes: why it's interesting.
 
 ## General
 -

@@ -302,7 +302,7 @@ write_file "$ROOT/99_Resources/Articles.md" "# Articles
 Articles, blog posts, and notable papers.
 
 ## Format
-- [Title](url) — author/site. Tag: \`#area\`. Notes: 1-2 lines.
+- [Title](https://example.com) — author/site. Tag: \`#area\`. Notes: 1-2 lines.
 "
 
 write_file "$ROOT/99_Resources/Tools.md" "# Tools
@@ -336,7 +336,7 @@ write_file "$ROOT/99_Resources/Courses.md" "# Courses
 Courses (free / paid) by area.
 
 ## Format
-- [Title](url) — platform. Level: beginner/intermediate/advanced. Tag: \`#area\`.
+- [Title](https://example.com) — platform. Level: beginner/intermediate/advanced. Tag: \`#area\`.
 "
 
 write_file "$ROOT/99_Resources/Podcasts.md" "# Podcasts
@@ -344,7 +344,7 @@ write_file "$ROOT/99_Resources/Podcasts.md" "# Podcasts
 Software development and adjacent podcasts.
 
 ## Format
-- [Name](url) — host. Tag: \`#area\`. Notes: what it's about.
+- [Name](https://example.com) — host. Tag: \`#area\`. Notes: what it's about.
 
 ## General
 -
@@ -367,7 +367,7 @@ write_file "$ROOT/99_Resources/Newsletters.md" "# Newsletters
 Technical newsletters worth following.
 
 ## Format
-- [Name](url) — author. Frequency: weekly/monthly. Tag: \`#area\`.
+- [Name](https://example.com) — author. Frequency: weekly/monthly. Tag: \`#area\`.
 
 ## Backend & Architecture
 -
@@ -393,7 +393,7 @@ write_file "$ROOT/99_Resources/Conferences.md" "# Conferences
 Notable conferences, in-person and online.
 
 ## Format
-- [Name](url) — frequency/location. Tag: \`#area\`. Notes: why it's interesting.
+- [Name](https://example.com) — frequency/location. Tag: \`#area\`. Notes: why it's interesting.
 
 ## General
 -
@@ -419,7 +419,7 @@ write_file "$ROOT/99_Resources/YouTube_Channels.md" "# YouTube Channels
 Technical YouTube channels worth following.
 
 ## Format
-- [Channel name](url) — tag: \`#area\`. Notes: what it covers.
+- [Channel name](https://example.com) — tag: \`#area\`. Notes: what it covers.
 
 ## Architecture & System Design
 -
@@ -445,7 +445,7 @@ write_file "$ROOT/99_Resources/Communities.md" "# Communities
 Developer communities (Discord, Slack, Reddit, forums).
 
 ## Format
-- [Name](url) — platform. Tag: \`#area\`. Notes: how to join, what to expect.
+- [Name](https://example.com) — platform. Tag: \`#area\`. Notes: how to join, what to expect.
 
 ## Reddit
 -

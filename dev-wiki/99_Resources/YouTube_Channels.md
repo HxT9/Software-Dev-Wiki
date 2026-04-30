@@ -3,7 +3,7 @@
 Technical YouTube channels worth following.
 
 ## Format
-- [Channel name](url) — tag: `#area`. Notes: what it covers.
+- [Channel name](https://example.com) — tag: `#area`. Notes: what it covers.
 
 ## Architecture & System Design
 -

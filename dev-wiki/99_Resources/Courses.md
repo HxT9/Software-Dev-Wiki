@@ -3,4 +3,4 @@
 Courses (free / paid) by area.
 
 ## Format
-- [Title](url) — platform. Level: beginner/intermediate/advanced. Tag: `#area`.
+- [Title](https://example.com) — platform. Level: beginner/intermediate/advanced. Tag: `#area`.

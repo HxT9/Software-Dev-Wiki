@@ -3,7 +3,7 @@
 Developer communities (Discord, Slack, Reddit, forums).
 
 ## Format
-- [Name](url) — platform. Tag: `#area`. Notes: how to join, what to expect.
+- [Name](https://example.com) — platform. Tag: `#area`. Notes: how to join, what to expect.
 
 ## Reddit
 -

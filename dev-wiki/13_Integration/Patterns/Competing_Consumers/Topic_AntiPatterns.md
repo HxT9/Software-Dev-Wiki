@@ -1,8 +1,7 @@
 # Topic Anti-Patterns - Competing Consumers
 
 > Anti-patterns *specific to Competing Consumers*.
-> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../16_AntiPatterns/).
-> If the relative path doesn't match (e.g., for more deeply nested patterns), adjust it accordingly.
+> For generic anti-patterns (God Object, Spaghetti Code, etc.) see [16_AntiPatterns](../../../16_AntiPatterns/).
 
 ## <Anti-Pattern Name>
 

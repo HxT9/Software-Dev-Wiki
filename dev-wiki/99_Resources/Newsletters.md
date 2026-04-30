@@ -3,7 +3,7 @@
 Technical newsletters worth following.
 
 ## Format
-- [Name](url) — author. Frequency: weekly/monthly. Tag: `#area`.
+- [Name](https://example.com) — author. Frequency: weekly/monthly. Tag: `#area`.
 
 ## Backend & Architecture
 -
