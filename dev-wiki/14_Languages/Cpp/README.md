@@ -8,14 +8,8 @@ RAII, templates, move semantics, STL, concurrency.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Concurrency](./Concurrency/)
-- [Memory_Management](./Memory_Management/)
-- [Move_Semantics](./Move_Semantics/)
-- [RAII](./RAII/)
-- [STL](./STL/)
-- [Templates](./Templates/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

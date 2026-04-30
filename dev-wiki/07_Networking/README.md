@@ -8,26 +8,8 @@ Protocols, API design, transport security.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [API_Design](./API_Design/)
-- [CDN](./CDN/)
-- [CORS](./CORS/)
-- [DNS](./DNS/)
-- [GraphQL](./GraphQL/)
-- [HTTP2_HTTP3](./HTTP2_HTTP3/)
-- [HTTP_Deep_Dive](./HTTP_Deep_Dive/)
-- [REST_vs_RPC](./REST_vs_RPC/)
-- [Rate_Limiting](./Rate_Limiting/)
-- [Reverse_Proxy](./Reverse_Proxy/)
-- [Server_Sent_Events](./Server_Sent_Events/)
-- [TCP_vs_UDP](./TCP_vs_UDP/)
-- [TLS_SSL](./TLS_SSL/)
-- [WebRTC](./WebRTC/)
-- [WebSockets](./WebSockets/)
-- [Webhooks](./Webhooks/)
-- [gRPC](./gRPC/)
-- [mTLS](./mTLS/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

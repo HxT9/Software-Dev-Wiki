@@ -8,14 +8,8 @@ JVM internals, GC, concurrency, streams, reactive, build.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Build_Tools](./Build_Tools/)
-- [Concurrency](./Concurrency/)
-- [GC](./GC/)
-- [JVM_Internals](./JVM_Internals/)
-- [Reactive](./Reactive/)
-- [Streams_Lambdas](./Streams_Lambdas/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

@@ -47,8 +47,8 @@ The first three (SRP, OCP, LSP) are about **what a class is and how it grows**. 
 What you should already understand:
 
 - OOP basics: classes, methods, inheritance, polymorphism, interfaces.
-- [Encapsulation](../Encapsulation/) — hiding internals behind a stable surface.
-- [Coupling_Cohesion](../Coupling_Cohesion/) — SOLID is partly a recipe for low coupling and high cohesion.
+- `Encapsulation` — hiding internals behind a stable surface.
+- `Coupling_Cohesion` — SOLID is partly a recipe for low coupling and high cohesion.
 - Basic unit testing: SOLID's payoff shows up most clearly when you try to write tests.
 
 ## Deep Dives
@@ -65,12 +65,12 @@ What you should already understand:
 
 ## Related Topics
 
-- [DRY_KISS_YAGNI](../DRY_KISS_YAGNI/) — counterweight to over-applied SOLID.
-- [Separation_of_Concerns](../Separation_of_Concerns/) — broader principle that SRP specializes.
-- [Composition_over_Inheritance](../Composition_over_Inheritance/) — practical strategy that helps satisfy LSP and OCP.
-- [Coupling_Cohesion](../Coupling_Cohesion/) — the metrics SOLID tries to optimize for.
-- [03_Design_Patterns/Architectural/Repository](../../03_Design_Patterns/Architectural/Repository/) — DIP made concrete.
-- [03_Design_Patterns/Behavioral/Strategy](../../03_Design_Patterns/Behavioral/Strategy/) — OCP made concrete.
+- `DRY_KISS_YAGNI` — counterweight to over-applied SOLID.
+- `Separation_of_Concerns` — broader principle that SRP specializes.
+- `Composition_over_Inheritance` — practical strategy that helps satisfy LSP and OCP.
+- `Coupling_Cohesion` — the metrics SOLID tries to optimize for.
+- `Repository pattern (03_Design_Patterns/Architectural)` — DIP made concrete.
+- `Strategy pattern (03_Design_Patterns/Behavioral)` — OCP made concrete.
 
 ## References
 
@@ -78,7 +78,3 @@ What you should already understand:
 - Robert C. Martin, *Clean Architecture* (2017) — SOLID applied at architecture scale.
 - [SOLID — Wikipedia](https://en.wikipedia.org/wiki/SOLID).
 - Sandi Metz, *Practical Object-Oriented Design in Ruby* — pragmatic counterpoint that questions some classical applications.
-
-## Tags
-
-`#foundations` `#principles` `#oop` `#design`

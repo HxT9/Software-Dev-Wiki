@@ -8,15 +8,8 @@ Chaos, fault injection, backpressure, bulkhead, graceful degradation.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Backpressure](./Backpressure/)
-- [Bulkhead](./Bulkhead/)
-- [Chaos_Engineering](./Chaos_Engineering/)
-- [Fault_Injection](./Fault_Injection/)
-- [Game_Days](./Game_Days/)
-- [Graceful_Degradation](./Graceful_Degradation/)
-- [Load_Shedding](./Load_Shedding/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

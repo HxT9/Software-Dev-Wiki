@@ -8,22 +8,8 @@ Testing strategies from unit to E2E.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [BDD](./BDD/)
-- [Chaos_Testing](./Chaos_Testing/)
-- [Contract_Testing](./Contract_Testing/)
-- [E2E_Testing](./E2E_Testing/)
-- [Integration_Testing](./Integration_Testing/)
-- [Mocking](./Mocking/)
-- [Mutation_Testing](./Mutation_Testing/)
-- [Performance_Testing](./Performance_Testing/)
-- [Property_Based_Testing](./Property_Based_Testing/)
-- [Snapshot_Testing](./Snapshot_Testing/)
-- [TDD](./TDD/)
-- [Test_Doubles](./Test_Doubles/)
-- [Test_Pyramid](./Test_Pyramid/)
-- [Unit_Testing](./Unit_Testing/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

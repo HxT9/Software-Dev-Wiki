@@ -8,20 +8,8 @@ Patterns for communication and responsibility between objects.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Chain_of_Responsibility](./Chain_of_Responsibility/)
-- [Command](./Command/)
-- [Iterator](./Iterator/)
-- [Mediator](./Mediator/)
-- [Memento](./Memento/)
-- [Null_Object](./Null_Object/)
-- [Observer](./Observer/)
-- [Specification](./Specification/)
-- [State](./State/)
-- [Strategy](./Strategy/)
-- [Template_Method](./Template_Method/)
-- [Visitor](./Visitor/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

@@ -4,19 +4,25 @@ Wiki management CLI.
 
 Subcommands:
   status   Status dashboard — counts topics by status across sections.
-  next     Suggest next stubs to write (optional filter by section).
-  lint     Validate YAML frontmatter on every topic README.
+  next     Suggest stubs to tackle next (optional section filter).
+  lint     Validate YAML frontmatter on every topic file.
   links    Find broken relative markdown links.
+  new      Create a new topic file from the template.
   touch    Update last_updated frontmatter for a given file.
 
 All commands operate on the dev-wiki/ tree relative to the repository root.
+A "topic file" is any .md file with YAML frontmatter that contains a `status:`
+key — this matches both single-file topics (Section/Topic.md) and folder-style
+topics (Section/Topic/README.md).
 
 Usage:
   python tools/wiki.py status
   python tools/wiki.py next [SECTION]
   python tools/wiki.py lint
   python tools/wiki.py links
-  python tools/wiki.py touch <path/to/README.md>
+  python tools/wiki.py new <Section>/<Topic_Name>           # single file
+  python tools/wiki.py new <Section>/<Topic_Name> --folder  # folder w/ Playground
+  python tools/wiki.py touch <path/to/file.md>
 """
 
 from __future__ import annotations
@@ -41,9 +47,11 @@ REQUIRED_FRONTMATTER_KEYS = {
     "status",
     "difficulty",
     "tags",
+    "last_updated",
+}
+OPTIONAL_FRONTMATTER_KEYS = {
     "prerequisites",
     "related",
-    "last_updated",
     "reading_time_min",
 }
 
@@ -83,27 +91,41 @@ def parse_frontmatter(text: str) -> dict | None:
     return out
 
 
-def iter_topic_readmes() -> list[Path]:
-    """Yield every leaf-topic README.md (skipping category READMEs and special dirs)."""
-    readmes = []
-    for path in WIKI_ROOT.rglob("README.md"):
-        # Skip Playground READMEs
+def iter_topic_files() -> list[Path]:
+    """Yield every topic file.
+
+    A topic file is any .md file with YAML frontmatter that has a ``status:`` key.
+    This covers both single-file topics (``<Section>/<Topic>.md``) and folder-style
+    topics (``<Section>/<Topic>/README.md``). It excludes section READMEs, special
+    meta files (``Tag_Index.md``, ``PROPOSED_TOPICS.md``, etc.), and Playground content.
+    """
+    topics: list[Path] = []
+    for path in WIKI_ROOT.rglob("*.md"):
         if "Playground" in path.parts:
             continue
-        # Only include files that have YAML frontmatter (i.e., topic-level READMEs).
         try:
             text = path.read_text(encoding="utf-8")
         except UnicodeDecodeError:
             continue
-        if text.startswith("---"):
-            readmes.append(path)
-    return sorted(readmes)
+        if not text.startswith("---"):
+            continue
+        fm = parse_frontmatter(text)
+        if fm and "status" in fm:
+            topics.append(path)
+    return sorted(topics)
 
 
 def topic_section(path: Path) -> str:
-    """Extract the top-level section (e.g. '01_Foundations') from a topic README path."""
+    """Extract the top-level section (e.g. '01_Foundations') from a topic file path."""
     rel = path.relative_to(WIKI_ROOT)
     return rel.parts[0]
+
+
+def topic_name(path: Path) -> str:
+    """Return the topic's display name regardless of single-file vs folder layout."""
+    if path.name == "README.md":
+        return path.parent.name
+    return path.stem
 
 
 # --------------------------------------------------------------------------- #
@@ -115,7 +137,7 @@ def cmd_status(_args: argparse.Namespace) -> int:
     by_section: dict[str, dict[str, int]] = defaultdict(lambda: defaultdict(int))
     totals: dict[str, int] = defaultdict(int)
 
-    for path in iter_topic_readmes():
+    for path in iter_topic_files():
         text = path.read_text(encoding="utf-8")
         fm = parse_frontmatter(text) or {}
         status = str(fm.get("status", "unknown"))
@@ -158,7 +180,7 @@ def cmd_next(args: argparse.Namespace) -> int:
     """Suggest stubs to tackle next."""
     section_filter = args.section
     candidates: list[Path] = []
-    for path in iter_topic_readmes():
+    for path in iter_topic_files():
         text = path.read_text(encoding="utf-8")
         fm = parse_frontmatter(text) or {}
         if str(fm.get("status", "")) != "stub":
@@ -195,7 +217,7 @@ def cmd_lint(_args: argparse.Namespace) -> int:
     errors: list[str] = []
     files_checked = 0
 
-    for path in iter_topic_readmes():
+    for path in iter_topic_files():
         files_checked += 1
         text = path.read_text(encoding="utf-8")
         fm = parse_frontmatter(text)
@@ -232,11 +254,11 @@ def cmd_lint(_args: argparse.Namespace) -> int:
         if tags is not None and not isinstance(tags, list):
             errors.append(f"{rel}: tags must be a YAML list, got {type(tags).__name__}")
 
-        # title must match folder name (with underscores → spaces)
+        # title must match the topic name (folder name for README.md, file stem otherwise)
         title = str(fm.get("title", ""))
-        expected = path.parent.name.replace("_", " ")
+        expected = topic_name(path).replace("_", " ")
         if title and title != expected:
-            errors.append(f"{rel}: title '{title}' should be '{expected}' (matches folder name)")
+            errors.append(f"{rel}: title '{title}' should be '{expected}' (matches topic name)")
 
     print(f"Linted {files_checked} topic READMEs.\n")
     if errors:
@@ -293,11 +315,14 @@ def cmd_links(_args: argparse.Namespace) -> int:
                 continue
             checked += 1
             resolved = (path.parent / target_clean).resolve()
-            # If link points to a directory, that's fine (folder navigation works).
+            # If the path resolves to an existing file or directory, accept.
             if resolved.exists():
                 continue
-            # Try with implicit README.md or index.md.
-            if resolved.is_dir() or (resolved / "README.md").exists() or (resolved / "index.md").exists():
+            # Try implicit README.md / index.md (folder-style topic).
+            if (resolved / "README.md").exists() or (resolved / "index.md").exists():
+                continue
+            # Try as a single-file topic (the link points at "Topic/" but topic is "Topic.md").
+            if Path(str(resolved) + ".md").exists():
                 continue
             # If it's a "/" path (folder), it's already handled above when the dir exists.
             line_no = text.count("\n", 0, m.start()) + 1
@@ -318,6 +343,96 @@ def cmd_links(_args: argparse.Namespace) -> int:
 # --------------------------------------------------------------------------- #
 # touch
 # --------------------------------------------------------------------------- #
+
+def cmd_new(args: argparse.Namespace) -> int:
+    """Create a new topic file from the template.
+
+    Usage: python tools/wiki.py new <NN_Section>/<Topic_Name>
+           python tools/wiki.py new <NN_Section>/<Subcategory>/<Topic_Name>
+
+    Default creates a single .md file. Pass --folder to create the topic as
+    a folder with README.md inside (for complex topics that will need
+    Playground/, images/, etc.).
+    """
+    rel = args.path.strip("/").replace("\\", "/")
+    parts = rel.split("/")
+    if len(parts) < 2:
+        print(f"error: path must be SECTION/TOPIC (got '{rel}')", file=sys.stderr)
+        return 2
+
+    section = parts[0]
+    topic_name = parts[-1]
+    title = topic_name.replace("_", " ")
+    today = dt.date.today().isoformat()
+
+    section_dir = WIKI_ROOT / "/".join(parts[:-1])
+    if not section_dir.exists():
+        print(f"error: section folder '{section_dir}' does not exist", file=sys.stderr)
+        return 2
+
+    if args.folder:
+        target_dir = section_dir / topic_name
+        target = target_dir / "README.md"
+        target_dir.mkdir(parents=True, exist_ok=True)
+        (target_dir / "Playground").mkdir(exist_ok=True)
+    else:
+        target = section_dir / f"{topic_name}.md"
+
+    if target.exists():
+        print(f"error: '{target.relative_to(REPO_ROOT)}' already exists", file=sys.stderr)
+        return 1
+
+    template = f"""---
+title: {title}
+section: {section}
+status: stub
+difficulty: intermediate
+tags: []
+last_updated: {today}
+---
+
+# {title}
+
+## Overview
+
+One or two sentences explaining what this topic is and why it exists.
+
+## Problem
+
+What concrete issue this addresses.
+
+## Key Concepts
+
+-
+-
+
+## When to Use
+
+-
+
+## Trade-offs
+
+### Benefits
+-
+
+### Drawbacks
+-
+
+### Alternatives
+-
+
+## Notes
+
+-
+"""
+    target.write_text(template, encoding="utf-8")
+    print(f"created: {target.relative_to(REPO_ROOT)}")
+    print(f"\nNext steps:")
+    print(f"  1. Edit {target.relative_to(REPO_ROOT)} — set tags, write content.")
+    print(f"  2. Update PROPOSED_TOPICS.md: change ⬜ to ✅ for {topic_name}.")
+    print(f"  3. Add a link from the section README ({section}/README.md).")
+    return 0
+
 
 def cmd_touch(args: argparse.Namespace) -> int:
     """Update the last_updated frontmatter field for one or more files."""
@@ -363,6 +478,11 @@ def build_parser() -> argparse.ArgumentParser:
 
     sub.add_parser("lint", help="Validate frontmatter").set_defaults(func=cmd_lint)
     sub.add_parser("links", help="Find broken relative links").set_defaults(func=cmd_links)
+
+    p_new = sub.add_parser("new", help="Create a new topic from template")
+    p_new.add_argument("path", help="Topic path, e.g. 02_Architecture/CQRS")
+    p_new.add_argument("--folder", action="store_true", help="Create as folder (Topic/README.md) for complex topics with Playground/, images, etc.")
+    p_new.set_defaults(func=cmd_new)
 
     p_touch = sub.add_parser("touch", help="Update last_updated to today")
     p_touch.add_argument("files", nargs="+", help="Markdown file(s) to update")

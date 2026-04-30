@@ -8,13 +8,8 @@ Application organization patterns (MVC, MVVM, Repository, etc.).
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [MVC](./MVC/)
-- [MVP](./MVP/)
-- [MVVM](./MVVM/)
-- [Repository](./Repository/)
-- [Unit_of_Work](./Unit_of_Work/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

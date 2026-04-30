@@ -20,6 +20,16 @@ category_readme() {
   local dir="$1"
   local title="$2"
   local subtitle="$3"
+  # Compute the relative path back to dev-wiki/00_Index based on directory depth.
+  local depth
+  depth=$(($(echo "$dir" | tr '/' '\n' | wc -l)))
+  local up_to_index=""
+  local i
+  for (( i=0; i<depth; i++ )); do
+    up_to_index="../${up_to_index}"
+  done
+  up_to_index="${up_to_index}00_Index"
+
   write_file "$ROOT/$dir/README.md" "# ${title}
 
 ## Overview
@@ -30,17 +40,11 @@ ${subtitle}
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *\"Symptom you observe in code\"* → \`[Topic_Name](./Topic_Name/)\`
+> - *\"Symptom you observe in code\"* → \`Topic_Name\` (with link if written)
 
 ## Topics in this section
-$(cd "$ROOT/$dir" && for d in */; do
-  d="${d%/}"
-  if [[ "$d" != "Playground" ]]; then
-    printf -- "- [%s](./%s/)\n" "$d" "$d"
-  fi
-done)
 
-## Tags
+See [PROPOSED_TOPICS](${up_to_index}/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.
 "
 }
 

@@ -8,23 +8,8 @@ CI/CD, containers, orchestration, deployment.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Build_Systems](./Build_Systems/)
-- [CI_CD](./CI_CD/)
-- [Configuration_Management](./Configuration_Management/)
-- [Deployment_Strategies](./Deployment_Strategies/)
-- [Docker](./Docker/)
-- [Feature_Flags](./Feature_Flags/)
-- [GitOps](./GitOps/)
-- [Helm](./Helm/)
-- [Infrastructure_as_Code](./Infrastructure_as_Code/)
-- [Kubernetes](./Kubernetes/)
-- [Monorepo_vs_Polyrepo](./Monorepo_vs_Polyrepo/)
-- [Pre_Commit_Hooks](./Pre_Commit_Hooks/)
-- [Service_Mesh](./Service_Mesh/)
-- [Trunk_Based_Development](./Trunk_Based_Development/)
-- [Versioning](./Versioning/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

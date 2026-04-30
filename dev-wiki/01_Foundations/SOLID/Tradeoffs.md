@@ -54,8 +54,8 @@ The strongest argument for SOLID is the maintenance phase:
 
 ## Alternatives
 
-- **[DRY_KISS_YAGNI](../DRY_KISS_YAGNI/)** — for small, single-purpose code, KISS-first beats SOLID-first. Don't apply five principles where two suffice.
+- **`DRY_KISS_YAGNI`** — for small, single-purpose code, KISS-first beats SOLID-first. Don't apply five principles where two suffice.
 - **Procedural / transaction script.** For simple CRUD apps, a flat function-per-endpoint design is often clearer than ceremony around CRUD entities.
 - **Functional core, imperative shell.** An alternative discipline that gets similar testability via pure functions instead of interfaces.
 - **Data-oriented design** — for performance-critical systems, organize by data layout instead of object hierarchies (game engines, databases).
-- **[Composition_over_Inheritance](../Composition_over_Inheritance/)** — a single principle that delivers most of SOLID's value without all the framework apparatus.
+- **`Composition_over_Inheritance`** — a single principle that delivers most of SOLID's value without all the framework apparatus.

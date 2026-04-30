@@ -8,16 +8,8 @@ Pipelines, batch vs streaming, data lake/warehouse/lakehouse.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Apache_Spark_Basics](./Apache_Spark_Basics/)
-- [Batch_vs_Streaming](./Batch_vs_Streaming/)
-- [Data_Lake_Warehouse_Lakehouse](./Data_Lake_Warehouse_Lakehouse/)
-- [Data_Pipelines](./Data_Pipelines/)
-- [Data_Quality](./Data_Quality/)
-- [ETL_ELT](./ETL_ELT/)
-- [Workflow_Orchestrators](./Workflow_Orchestrators/)
-- [dbt](./dbt/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

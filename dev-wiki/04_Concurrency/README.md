@@ -8,21 +8,8 @@ Threading, async, concurrent models, and typical pitfalls.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Actor_Model](./Actor_Model/)
-- [Async_Await](./Async_Await/)
-- [Atomic_Lock_Free](./Atomic_Lock_Free/)
-- [CSP](./CSP/)
-- [Concurrency_vs_Parallelism](./Concurrency_vs_Parallelism/)
-- [Coroutines](./Coroutines/)
-- [Deadlocks](./Deadlocks/)
-- [Livelock_Starvation](./Livelock_Starvation/)
-- [Locks_Synchronization](./Locks_Synchronization/)
-- [Memory_Models](./Memory_Models/)
-- [Race_Conditions](./Race_Conditions/)
-- [Reactive_Programming](./Reactive_Programming/)
-- [Threading](./Threading/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

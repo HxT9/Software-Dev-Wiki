@@ -8,13 +8,8 @@ Concrete brokers: RabbitMQ, Kafka, NATS, Redis Streams, AWS SQS/SNS.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [AWS_SQS_SNS](./AWS_SQS_SNS/)
-- [Kafka](./Kafka/)
-- [NATS](./NATS/)
-- [RabbitMQ](./RabbitMQ/)
-- [Redis_Streams](./Redis_Streams/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

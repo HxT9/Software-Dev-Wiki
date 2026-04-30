@@ -8,16 +8,8 @@ Documentation as code, C4, diagrams, code review, pairing.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [C4_Model](./C4_Model/)
-- [Code_Review](./Code_Review/)
-- [Documentation_as_Code](./Documentation_as_Code/)
-- [Mentoring](./Mentoring/)
-- [Mermaid](./Mermaid/)
-- [Pair_Programming](./Pair_Programming/)
-- [PlantUML](./PlantUML/)
-- [Technical_Writing](./Technical_Writing/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

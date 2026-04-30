@@ -8,18 +8,8 @@ Integrating LLMs and ML into traditional software systems (RAG, agents, tool cal
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Agent_Patterns](./Agent_Patterns/)
-- [Cost_Latency_Optimization](./Cost_Latency_Optimization/)
-- [Embeddings](./Embeddings/)
-- [LLM_API_Integration](./LLM_API_Integration/)
-- [Model_Evaluation](./Model_Evaluation/)
-- [Prompt_Engineering](./Prompt_Engineering/)
-- [RAG](./RAG/)
-- [Streaming_Responses](./Streaming_Responses/)
-- [Tool_Calling](./Tool_Calling/)
-- [Vector_Search](./Vector_Search/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

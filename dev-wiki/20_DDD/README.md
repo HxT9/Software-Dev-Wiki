@@ -8,17 +8,8 @@ Strategic and tactical patterns for domain modeling.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Aggregates](./Aggregates/)
-- [Anti_Corruption_Layer](./Anti_Corruption_Layer/)
-- [Bounded_Context](./Bounded_Context/)
-- [Domain_Events](./Domain_Events/)
-- [Entities](./Entities/)
-- [Strategic_Design](./Strategic_Design/)
-- [Tactical_Design](./Tactical_Design/)
-- [Ubiquitous_Language](./Ubiquitous_Language/)
-- [Value_Objects](./Value_Objects/)
 
-## Tags
+See [PROPOSED_TOPICS](../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

@@ -8,16 +8,8 @@ PubSub, Saga, Outbox, DLQ, Competing Consumers, Request/Reply.
 ## When to reach for what
 
 > *TODO*: brief real-world scenarios mapping problem → topic. Example format:
-> - *"Symptom you observe in code"* → `[Topic_Name](./Topic_Name/)`
+> - *"Symptom you observe in code"* → `Topic_Name` (with link if written)
 
 ## Topics in this section
-- [Competing_Consumers](./Competing_Consumers/)
-- [Dead_Letter_Queue](./Dead_Letter_Queue/)
-- [Event_Streaming](./Event_Streaming/)
-- [Outbox_Inbox](./Outbox_Inbox/)
-- [PubSub](./PubSub/)
-- [Request_Reply](./Request_Reply/)
-- [Saga](./Saga/)
-- [Schema_Registry](./Schema_Registry/)
 
-## Tags
+See [PROPOSED_TOPICS](../../00_Index/PROPOSED_TOPICS.md) for the full list of topics in this section. Written topics live as files alongside this README.

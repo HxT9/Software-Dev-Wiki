@@ -172,7 +172,7 @@ How each principle shows up:
 
 ## Improvements
 
-- **Idempotency keys.** Pass a client-supplied idempotency key into `ChargeAsync` and propagate to the provider — see [05_Distributed_Systems/Idempotency](../../05_Distributed_Systems/Idempotency/).
+- **Idempotency keys.** Pass a client-supplied idempotency key into `ChargeAsync` and propagate to the provider — see `Idempotency (05_Distributed_Systems)`.
 - **Circuit breaker.** Wrap each provider in a circuit breaker so a 30-second Stripe outage doesn't drag the rest of the system down.
 - **Outbox pattern.** Persist payment intent before calling the provider; reconcile asynchronously. Avoids "charged but not recorded" failures.
 - **Metrics tags.** Cardinality-safe tags (provider, outcome, currency) — avoid customer ID.

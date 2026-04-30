@@ -6,34 +6,53 @@ Operational rules for writing and maintaining the wiki. Read this before adding 
 
 ## 1. Structure of a topic
 
-Each leaf topic has **9 files + 1 folder**:
+The default layout is a **single Markdown file** named after the topic:
 
 ```
-Topic_Name/
-├── README.md              ← hub: frontmatter + overview + links to other files
-├── When_To_Use.md         ← use cases, indicators, decision tree
-├── Tradeoffs.md           ← pros/cons, performance, alternatives
-├── Example_Simple.md      ← minimal example
-├── Example_Real.md        ← production-like example
-├── Diagrams.md            ← Mermaid / PlantUML / C4
-├── Checklist.md           ← implementation, review, production readiness
-├── Topic_AntiPatterns.md  ← anti-patterns *specific to this topic*
-├── Notes.md               ← insights, edge cases, gotchas, open questions
-└── Playground/            ← runnable code and mini projects
-    └── README.md
+01_Foundations/
+├── README.md              ← section README (intro + decision guide + topic list)
+├── SOLID.md               ← single-file topic
+└── DRY_KISS_YAGNI.md      ← single-file topic
 ```
 
-### Anti-duplication rule
+For **complex topics** that need a Playground, multiple language samples, exported diagrams, or attachments, opt into the folder layout:
 
-Each piece of information lives **in a single file**. The `README.md` is a **lightweight hub**: it contains frontmatter, overview, problem, key concepts, prerequisites, and **links** to detailed sections. If you find yourself writing a trade-off in the README, stop: it goes in `Tradeoffs.md`. If you're writing an example in the README, stop: it goes in `Example_Simple.md`.
+```
+01_Foundations/
+└── SOLID/
+    ├── README.md          ← the topic content (with frontmatter)
+    ├── Playground/        ← runnable code
+    └── images/            ← screenshots, exported diagrams
+```
 
-### Minimal vs full topics
+The single-file layout is the default. Reach for the folder structure only when assets genuinely live alongside the prose, or when the file would exceed ~1000 lines.
 
-For simple topics you can fill only `README.md` + `Notes.md` and leave the rest as skeleton. For complex topics (e.g., `CQRS`, `Event_Sourcing`, `Kafka`) fill all 9 files.
+### Section-level structure
+
+Each top-level section folder (`01_Foundations/`, `02_Architecture/`, ...) contains a single `README.md` that is the section's **landing page**. It has three parts:
+
+1. **Overview** — what unifies the topics in this section.
+2. **When to reach for what** — a decision guide mapping symptoms to topics.
+3. **Topics in this section** — written topics linked, proposed topics shown as `code` references.
+
+### Topic proposal flow
+
+Topics that aren't written yet **don't have a folder**. They live as line items in [PROPOSED_TOPICS.md](./PROPOSED_TOPICS.md) (master list) and as `code` references in section READMEs.
+
+To create a new topic from the template:
+
+```bash
+python tools/wiki.py new 02_Architecture/CQRS               # single file
+python tools/wiki.py new 02_Architecture/CQRS --folder      # folder with Playground/
+```
+
+The canonical template lives in [TOPIC_TEMPLATE.md](./TOPIC_TEMPLATE.md).
 
 ---
 
-## 2. YAML frontmatter (mandatory in `README.md`)
+## 2. YAML frontmatter
+
+### Required keys
 
 ```yaml
 ---
@@ -41,25 +60,33 @@ title: <Topic Name>
 section: <NN_Section_Name>          # e.g., 02_Architecture
 status: stub                        # stub | draft | wip | reviewed | stable
 difficulty: intermediate            # beginner | intermediate | advanced
-tags: [tag1, tag2]                  # lower-kebab-case
-prerequisites: []                   # other topic names
-related: []                         # other topic names
+tags: [tag1, tag2]                  # lower-kebab-case, no spaces
 last_updated: YYYY-MM-DD
-reading_time_min: 10                # estimated minutes for full read
 ---
 ```
 
+### Optional keys
+
+```yaml
+prerequisites: [Other_Topic]        # other topic names
+related: [Other_Topic]              # other topic names
+reading_time_min: 10                # estimated minutes for full read
+```
+
 ### Status workflow
-- `stub`: only skeleton, no real content yet.
-- `draft`: first pass underway, content incomplete.
-- `wip`: actively in progress, structure defined.
+- `stub`: skeleton only.
+- `draft`: first pass written, content incomplete.
+- `wip`: actively in progress.
 - `reviewed`: complete and reviewed.
-- `stable`: don't touch without good reason.
+- `stable`: settled, don't touch without reason.
+
+When a topic moves out of `stub`, also update its line in [PROPOSED_TOPICS.md](./PROPOSED_TOPICS.md) (⬜ → ✅).
 
 ### Tags
 - Lowercase, kebab-case (`event-driven`, not `EventDriven`).
-- The scaffolder generates automatic tags from the path (section + subsections). Add cross-cutting thematic tags (e.g., `#performance`, `#security`).
-- Each new tag must be added to [Tag_Index.md](./Tag_Index.md).
+- The MkDocs Material *tags plugin* renders each tag in the frontmatter as a clickable chip at the top of the page that links to the [Tag_Index](./Tag_Index.md), where pages are grouped by tag.
+- Do **not** write a `## Tags` section at the bottom of a file — the chips are the canonical display.
+- Common tags are listed in [Tag_Index.md](./Tag_Index.md). Reuse before minting new ones.
 
 ### Prerequisites & Related
 - `prerequisites`: what to read **before** to understand the topic.
@@ -68,46 +95,42 @@ reading_time_min: 10                # estimated minutes for full read
 
 ---
 
-## 3. Per-file conventions
+## 3. Section ordering inside a topic
 
-### `README.md`
-Mandatory sections: Overview, Problem, Key Concepts, Prerequisites, Deep Dives (links to other files), Related Topics, References.
-**Do not duplicate** content that lives in other files. The links in "Deep Dives" are the entry points.
+Required content (every topic):
+- Frontmatter (see above).
+- `# <Title>` — H1 matching the topic name (with underscores → spaces).
+- `## Overview` — one or two sentences.
 
-### `When_To_Use.md`
-Sections: Use Cases, When to Use, When NOT to Use, Decision Tree (Mermaid), Real Scenarios.
-The decision tree is optional but strongly recommended for architectural patterns.
+Optional sections, in canonical order (so readers can scan consistently):
 
-### `Tradeoffs.md`
-Sections: Benefits, Drawbacks, Performance Characteristics, Scalability, Maintainability, Operational Cost, Alternatives.
-**Performance Characteristics**: fill in only the relevant fields. For an algorithmic topic, `Big O (Time)` will make sense; for an architecture topic, `Throughput` and `Latency` will. Remove the fields that don't apply.
+1. `## Problem`
+2. `## Key Concepts`
+3. `## Prerequisites`
+4. `## When to Use`
+5. `## When NOT to Use`
+6. `## Trade-offs` — with sub-sections Benefits / Drawbacks / Performance Characteristics / Alternatives.
+7. `## Simple Example` — minimal runnable code.
+8. `## Real World Example` — production-leaning code.
+9. `## Diagrams` — Mermaid preferred.
+10. `## Checklist` — Implementation / Review / Production Readiness.
+11. `## Topic Anti-Patterns` — misapplications specific to this topic.
+12. `## Notes` — Insights / Edge Cases / Gotchas / Open Questions.
+13. `## Related Topics`
+14. `## References`
 
-### `Example_Simple.md`
-Minimal, isolated, runnable example. One idea per example.
-Specify the language in the code fence (` ```python `, ` ```rust `, etc.).
+A topic with status `stub` may have just frontmatter + title + Overview. As status moves through `draft → wip → reviewed`, fill in the optional sections that earn their place.
 
-### `Example_Real.md`
-Production-leaning example: error handling, observability, configuration, realistic dependencies. Link to `Diagrams.md` for the visualization.
+### Notes per section
 
-### `Diagrams.md`
-Inline Mermaid diagrams (preferred — renders on GitHub, Obsidian, VS Code). PlantUML only if Mermaid isn't enough. C4 model for architectures (Context → Container → Component → Code).
+- **Examples**: always specify the language in the code fence (` ```python `, ` ```csharp `, etc.).
+- **Diagrams**: prefer inline Mermaid (renders on GitHub, Obsidian, MkDocs). Use PlantUML or C4 model when Mermaid isn't enough.
+- **Anti-patterns**: keep this section *topic-specific*. Generic anti-patterns (God Object, Spaghetti Code, Premature Optimization) live in [16_AntiPatterns/](../16_AntiPatterns/).
+- **Performance Characteristics**: fill only the rows that apply. For algorithmic topics, `Big O (Time)`; for architecture, `Throughput` and `Latency`.
 
-### `Checklist.md`
-Three lists:
-- **Implementation Checklist**: concrete steps.
-- **Review Checklist**: what to look for in code review.
-- **Production Readiness**: logging, metrics, alerting, tests, rollback, security.
+### Folder-style topics
 
-### `Topic_AntiPatterns.md`
-Anti-patterns **specific to this topic**. For each: Description, Why it's bad, Bad Example, Better Approach, Good Example.
-For **generic** anti-patterns (God Object, Spaghetti Code, Premature Optimization, etc.) → [16_AntiPatterns/](../16_AntiPatterns/).
-
-### `Notes.md`
-Sections: Insights, Edge Cases, Gotchas, Open Questions.
-This is the topic's "field journal". Things learned in practice, unresolved doubts, edge cases discovered.
-
-### `Playground/`
-Runnable mini projects. Each Playground has its own `README.md` with execution instructions. Language and stack at the author's discretion (preference: same stack as the author's real project).
+When a topic uses the folder layout, the `README.md` carries everything described above. Sub-folders like `Playground/` and `images/` hold ancillary content. The Playground folder must include its own `README.md` with execution instructions.
 
 ---
 
@@ -129,21 +152,25 @@ Runnable mini projects. Each Playground has its own `README.md` with execution i
 
 ## 6. Workflow to add a topic
 
-1. Add the path to `TOPICS=( ... )` in `scaffold_topics.sh`.
-2. Run `bash scaffold_topics.sh` (idempotent, doesn't overwrite).
-3. Open the new topic's `README.md` and fill the frontmatter (status, tags, prerequisites).
-4. Fill in the other files as the topic matures.
-5. Update `00_Index/Roadmap.md` if the topic belongs to a study level.
-6. Update `00_Index/Tag_Index.md` if you introduce a new tag.
+1. Run `python tools/wiki.py new <Section>/<Topic_Name>` (or add `--folder` for the folder layout).
+2. Edit the created file: set `tags`, write the Overview, set `status` to `draft` once content starts.
+3. Update [PROPOSED_TOPICS.md](./PROPOSED_TOPICS.md) — flip ⬜ to ✅ for the new topic.
+4. Add a link to the topic from the section's `README.md` (replace the `code` reference with a real link).
+5. Update [Roadmap.md](./Roadmap.md) if the topic belongs to a study level.
+
+The Tag_Index updates itself — the MkDocs Material *tags plugin* picks up `tags:` from frontmatter on each build.
 
 ---
 
-## 7. Workflow to migrate the template
+## 7. Tooling
 
-If the template changes in the future:
-1. Update `scaffold_topics.sh` with the new template version.
-2. Run `FORCE=1 bash scaffold_topics.sh` only if existing files are still skeletons (status `stub`).
-3. If real content exists, write a targeted migration that preserves the content.
+- `python tools/wiki.py status` — dashboard of topics by status.
+- `python tools/wiki.py next [SECTION]` — pick a stub to write next.
+- `python tools/wiki.py lint` — validate frontmatter on every topic.
+- `python tools/wiki.py links` — find broken relative links.
+- `python tools/wiki.py new <Section>/<Topic>` — create a topic from the template.
+- `python tools/wiki.py touch <file>` — refresh `last_updated` to today (also runs as a git pre-commit hook).
+- `bash tools/install_hooks.sh` — install the pre-commit hook (run once after cloning).
 
 ---
 

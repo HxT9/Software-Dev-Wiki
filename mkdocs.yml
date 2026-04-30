@@ -60,6 +60,8 @@ plugins:
         - it
   - awesome-pages
   - section-index
+  - tags:
+      tags_file: 00_Index/Tag_Index.md
   - glightbox:
       touchNavigation: true
       loop: false
