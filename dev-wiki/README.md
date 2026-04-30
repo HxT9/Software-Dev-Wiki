@@ -7,7 +7,7 @@ Raccoglie spiegazioni teoriche, esempi pratici, trade-off e snippet riutilizzabi
 
 | Sezione | Contenuto |
 |---|---|
-| [00_Index](./00_Index/README.md) | Mappa, roadmap, tag |
+| [00_Index](./00_Index/) | Mappa, roadmap, tag |
 | [01_Foundations](./01_Foundations/) | SOLID, DRY/KISS/YAGNI, coupling/cohesion, SoC |
 | [02_Architecture](./02_Architecture/) | Layered, Clean, Microservices, CQRS, Event Sourcing |
 | [03_Design_Patterns](./03_Design_Patterns/) | Creational, Structural, Behavioral |
@@ -48,6 +48,6 @@ In sintesi:
 - Link interni sempre relativi.
 
 ## Quick start
-1. Apri [00_Index/README.md](./00_Index/README.md) per la mappa.
+1. Apri [00_Index](./00_Index/) per la mappa.
 2. Segui [00_Index/Roadmap.md](./00_Index/Roadmap.md) per un percorso di studio.
 3. Cerca per tag in [00_Index/Tag_Index.md](./00_Index/Tag_Index.md).

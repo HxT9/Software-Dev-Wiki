@@ -1,4 +1,4 @@
 # Snippets - Regex
 
 Snippet riutilizzabili in Regex.
-Aggiungi un file `.md` per ogni snippet seguendo il template in [../README.md](../README.md).
+Aggiungi un file `.md` per ogni snippet seguendo il template in [../](../).

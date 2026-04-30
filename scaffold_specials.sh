@@ -199,7 +199,7 @@ for lang in C Cpp CSharp Python TypeScript SQL Bash PowerShell YAML Regex Git; d
   write_if_missing "$ROOT/18_Snippets/$lang/README.md" "# Snippets - ${lang}
 
 Snippet riutilizzabili in ${lang}.
-Aggiungi un file \`.md\` per ogni snippet seguendo il template in [../README.md](../README.md).
+Aggiungi un file \`.md\` per ogni snippet seguendo il template descritto in [../](../).
 "
 done
 

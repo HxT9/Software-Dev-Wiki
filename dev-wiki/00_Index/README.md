@@ -6,7 +6,7 @@ Punto d'ingresso della wiki.
 - [Convenzioni](./CONVENTIONS.md) — regole per scrivere topic
 - [Roadmap di studio](./Roadmap.md)
 - [Tag Index](./Tag_Index.md)
-- [README principale](../README.md)
+- [Home della wiki](../)
 
 ## Sezioni
 1. [Foundations](../01_Foundations/) — principi base
